@@ -1,0 +1,31 @@
+{{ define "main" }}
+  <article class="listing-detail">
+    <h1>{{ .Title }}</h1>
+    <p class="listing-meta">
+      <strong>Status:</strong> {{ .Params.status }} | <strong>Prijs:</strong> €{{ .Params.price }}/maand
+    </p>
+
+    <div class="gallery">
+      {{ range .Params.images }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" />
+      {{ end }}
+    </div>
+
+    <div class="content">
+      <h2>Beschrijving</h2>
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.features }}
+      <div class="features">
+        <h3>Kenmerken</h3>
+        <ul>
+          {{ range . }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+
+  </article>
+{{ end }}

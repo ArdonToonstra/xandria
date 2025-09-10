@@ -1,0 +1,9 @@
+.listing-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.gallery img {
+  max-width: 200px;
+  margin: 5px;
+}

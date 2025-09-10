@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xandria Huisvesting</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Xandria Huisvesting</description>
+    <generator>Hugo</generator>
+    <language>nl-NL</language>
+    <lastBuildDate>Wed, 10 Sep 2025 19:24:18 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eerste Appartement</title>
+      <link>http://localhost:1313/aanbod/eerste-appartement/</link>
+      <pubDate>Wed, 10 Sep 2025 19:24:18 +0200</pubDate>
+      <guid>http://localhost:1313/aanbod/eerste-appartement/</guid>
+      <description>&lt;h1 id=&#34;appartement-wijttenbachstraat-24&#34;&gt;Appartement Wijttenbachstraat 24&lt;/h1&gt;&#xA;&lt;p&gt;Dit is ons eerste appartement in Antwerpen, gelegen aan de Wijttenbachstraat 24. Het appartement beschikt over twee slaapkamers, een ruime woonkamer, een moderne keuken en een balkon met uitzicht op de stad. Het gebouw is recent gerenoveerd en biedt alle moderne voorzieningen.&#xA;Het appartement is ideaal gelegen, dicht bij openbaar vervoer, winkels en restaurants. Voor meer informatie of om een bezichtiging te plannen, neem contact met ons.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tweede Appartement</title>
+      <link>http://localhost:1313/aanbod/tweede-appartement/</link>
+      <pubDate>Wed, 10 Sep 2025 19:24:18 +0200</pubDate>
+      <guid>http://localhost:1313/aanbod/tweede-appartement/</guid>
+      <description>&lt;h1 id=&#34;appartement-engelselei-4&#34;&gt;Appartement Engelselei 4&lt;/h1&gt;&#xA;&lt;p&gt;Dit is ons tweede appartement in Antwerpen, gelegen aan de Engelselei 4. Het appartement beschikt over twee slaapkamers, een ruime woonkamer, een moderne keuken en een balkon met uitzicht op de stad. Het gebouw is recent gerenoveerd en biedt alle moderne voorzieningen.&#xA;Het appartement is ideaal gelegen, dicht bij openbaar vervoer, winkels en restaurants. Voor meer informatie of om een bezichtiging te plannen, neem contact met ons.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Wed, 10 Sep 2025 19:14:11 +0200</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;h1 id=&#34;contact&#34;&gt;Contact&lt;/h1&gt;&#xA;&lt;p&gt;Voor vragen of opmerkingen kunt u contact met ons opnemen via &lt;a href=&#34;mailto:info@xandria.nl&#34;&gt;email&lt;/a&gt;.&#xA;U kunt ons ook bereiken via telefoonnummer: +31 20 123 4567.&#xA;Onze contacturen zijn van maandag tot en met vrijdag, van 9:00 tot 17:00.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Acquisitie</title>
+      <link>http://localhost:1313/acquisitie/</link>
+      <pubDate>Wed, 10 Sep 2025 19:14:02 +0200</pubDate>
+      <guid>http://localhost:1313/acquisitie/</guid>
+      <description>&lt;h1 id=&#34;acquisitie&#34;&gt;Acquisitie&lt;/h1&gt;&#xA;&lt;p&gt;Wij zijn op zoek naar meer appartementsblokken in Antwerpen. Heeft u kennis van een gebouw dat te koop staat, neem dan contact met ons op via &lt;a href=&#34;mailto:info@xandria.nl&#34;&gt;email&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

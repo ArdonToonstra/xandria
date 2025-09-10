@@ -1,0 +1,17 @@
+baseURL = 'http://xandria.be/'
+title = 'Xandria Huisvesting'
+theme = 'ananke'
+
+defaultContentLanguage = 'nl'
+
+[languages]
+  [languages.nl]
+    languageName = 'Nederlands'
+    languageCode = 'nl-NL'
+    contentDir = 'content/nl' 
+    weight = 1
+  [languages.en]
+    languageName = 'English'
+    languageCode = 'en-US'
+    contentDir = 'content/en' 
+    weight = 2

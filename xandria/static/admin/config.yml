@@ -1,0 +1,55 @@
+# Voor lokale ontwikkeling
+local_backend: true
+
+# Voor productie (GitHub)
+backend:
+  name: git-gateway
+  branch: main # of master
+
+# Waar afbeeldingen opgeslagen worden
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+# Activeer meertaligheid
+i18n:
+  structure: multiple_folders
+  locales: [nl, en] # De talen die je ondersteunt
+
+collections:
+  # Collectie voor de hoofdpagina's (Contact, Acquisitie)
+  - name: "pages"
+    label: "Pagina's"
+    files:
+      - file: "content/acquisitie.md" # Decap zoekt zelf in /nl en /en
+        label: "Acquisitie Pagina"
+        name: "acquisitie"
+        i18n: true # Activeer meertaligheid voor dit bestand
+        fields:
+          - { label: "Titel", name: "title", widget: "string", i18n: true }
+          - { label: "Publicatiedatum", name: "date", widget: "datetime", i18n: "duplicate" }
+          - { label: "Inhoud", name: "body", widget: "markdown", i18n: true }
+      - file: "content/contact.md"
+        label: "Contact Pagina"
+        name: "contact"
+        i18n: true
+        fields:
+          - { label: "Titel", name: "title", widget: "string", i18n: true }
+          - { label: "Publicatiedatum", name: "date", widget: "datetime", i18n: "duplicate" }
+          - { label: "Inhoud", name: "body", widget: "markdown", i18n: true }
+
+  # Collectie voor het verhuuraanbod
+  - name: "listings"
+    label: "Aanbod"
+    folder: "content/aanbod" # Decap zoekt zelf in /nl en /en
+    create: true
+    i18n: true # Activeer meertaligheid voor deze collectie
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string", i18n: true }
+      - { label: "Status", name: "status", widget: "select", options: ["Te Huur", "Verhuurd"], i18n: "duplicate" }
+      - { label: "Type", name: "type", widget: "select", options: ["Appartement", "Garage"], i18n: "duplicate" }
+      - { label: "Prijs (€/maand)", name: "price", widget: "number", i18n: "duplicate" }
+      - { label: "Adres", name: "address", widget: "string", i18n: "duplicate" }
+      - { label: "Afbeeldingen", name: "images", widget: "image", media_library: { config: { multiple: true } }, i18n: "duplicate" }
+      - { label: "Kenmerken", name: "features", widget: "list", i18n: true, field: { label: "Kenmerk", name: "feature", widget: "string" } }
+      - { label: "Beschrijving", name: "body", widget: "markdown", i18n: true }

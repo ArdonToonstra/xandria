@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aanbods on Xandria Huisvesting</title>
+    <link>http://localhost:1313/aanbod/</link>
+    <description>Recent content in Aanbods on Xandria Huisvesting</description>
+    <generator>Hugo</generator>
+    <language>nl-NL</language>
+    <lastBuildDate>Wed, 10 Sep 2025 19:24:18 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/aanbod/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eerste Appartement</title>
+      <link>http://localhost:1313/aanbod/eerste-appartement/</link>
+      <pubDate>Wed, 10 Sep 2025 19:24:18 +0200</pubDate>
+      <guid>http://localhost:1313/aanbod/eerste-appartement/</guid>
+      <description>&lt;h1 id=&#34;appartement-wijttenbachstraat-24&#34;&gt;Appartement Wijttenbachstraat 24&lt;/h1&gt;&#xA;&lt;p&gt;Dit is ons eerste appartement in Antwerpen, gelegen aan de Wijttenbachstraat 24. Het appartement beschikt over twee slaapkamers, een ruime woonkamer, een moderne keuken en een balkon met uitzicht op de stad. Het gebouw is recent gerenoveerd en biedt alle moderne voorzieningen.&#xA;Het appartement is ideaal gelegen, dicht bij openbaar vervoer, winkels en restaurants. Voor meer informatie of om een bezichtiging te plannen, neem contact met ons.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tweede Appartement</title>
+      <link>http://localhost:1313/aanbod/tweede-appartement/</link>
+      <pubDate>Wed, 10 Sep 2025 19:24:18 +0200</pubDate>
+      <guid>http://localhost:1313/aanbod/tweede-appartement/</guid>
+      <description>&lt;h1 id=&#34;appartement-engelselei-4&#34;&gt;Appartement Engelselei 4&lt;/h1&gt;&#xA;&lt;p&gt;Dit is ons tweede appartement in Antwerpen, gelegen aan de Engelselei 4. Het appartement beschikt over twee slaapkamers, een ruime woonkamer, een moderne keuken en een balkon met uitzicht op de stad. Het gebouw is recent gerenoveerd en biedt alle moderne voorzieningen.&#xA;Het appartement is ideaal gelegen, dicht bij openbaar vervoer, winkels en restaurants. Voor meer informatie of om een bezichtiging te plannen, neem contact met ons.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

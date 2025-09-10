@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <div class="homepage-content">
+    <h1 class="page-title">{{ .Title }}</h1>
+    <div class="listing-summary">
+      {{ range .Pages }}
+        <article class="listing-card">
+          <a href="{{ .Permalink }}">
+            <h2>{{ .Title }}</h2>
+            {{ with .Params.images }}
+              <img src="{{ index . 0 | relURL }}" alt="{{ $.Title }}" loading="lazy">
+            {{ end }}
+            <p>
+              <strong>Status:</strong> {{ .Params.status }} <br>
+              <strong>Prijs:</strong> €{{ .Params.price }}/maand
+            </p>
+          </a>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

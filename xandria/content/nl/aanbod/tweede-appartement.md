@@ -16,10 +16,10 @@ furnished = true
 pets_allowed = false
 smoking_allowed = false
 images = [
-  '/images/listings/tweede-appartement/studio-overzicht.jpg',
-  '/images/listings/tweede-appartement/keuken-eiland.jpg',
-  '/images/listings/tweede-appartement/slaapgedeelte.jpg',
-  '/images/listings/tweede-appartement/badkamer.jpg'
+  '/images/listings/tweede-appartement/1.jpg',
+  '/images/listings/tweede-appartement/2.jpg',
+  '/images/listings/tweede-appartement/3.jpg',
+  '/images/listings/tweede-appartement/4.jpg'
 ]
 features = [
   'Volledig gemeubileerd',

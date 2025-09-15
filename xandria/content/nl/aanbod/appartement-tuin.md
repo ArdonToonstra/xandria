@@ -16,11 +16,11 @@ furnished = false
 pets_allowed = true
 smoking_allowed = false
 images = [
-  '/images/listings/appartement-tuin/woonkamer-groot.jpg',
-  '/images/listings/appartement-tuin/keuken-modern.jpg',
-  '/images/listings/appartement-tuin/tuin-zomer.jpg',
-  '/images/listings/appartement-tuin/slaapkamer-master.jpg',
-  '/images/listings/appartement-tuin/badkamer-luxe.jpg'
+  '/images/listings/appartement-tuin/1.jpg',
+  '/images/listings/appartement-tuin/2.jpg',
+  '/images/listings/appartement-tuin/3.jpg',
+  '/images/listings/appartement-tuin/4.jpg',
+  '/images/listings/appartement-tuin/5.jpg'
 ]
 features = [
   'Privé tuin van 40m²',

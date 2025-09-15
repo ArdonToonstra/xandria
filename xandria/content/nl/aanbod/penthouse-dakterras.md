@@ -17,11 +17,11 @@ furnished = false
 pets_allowed = false
 smoking_allowed = false
 images = [
-  '/images/listings/penthouse/dakterras-panorama.jpg',
-  '/images/listings/penthouse/woonkamer-design.jpg',
-  '/images/listings/penthouse/keuken-eiland.jpg',
-  '/images/listings/penthouse/slaapkamer-suite.jpg',
-  '/images/listings/penthouse/badkamer-wellness.jpg'
+  '/images/listings/penthouse/1.jpg',
+  '/images/listings/penthouse/2.jpg',
+  '/images/listings/penthouse/3.jpg',
+  '/images/listings/penthouse/4.jpg',
+  '/images/listings/penthouse/5.jpg'
 ]
 features = [
   'Dakterras van 60m²',

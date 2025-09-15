@@ -282,6 +282,100 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   border-bottom: 2px solid var(--xandria-primary);
 }
 
+/* Header logo */
+.site-logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+.site-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .site-logo img {
+    height: 40px;
+  }
+}
+
+/* Header / Navigation shrink behaviour */
+.site-nav {
+  background: var(--xandria-white);
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.site-nav--small {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.site-nav .site-logo img {
+  height: 56px;
+  transition: height 0.25s ease;
+}
+
+.site-nav.site-nav--small .site-logo img {
+  height: 36px;
+}
+
+.site-menu a {
+  color: var(--xandria-black);
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site-menu a:hover {
+  background: rgba(24,0,173,0.06);
+  color: var(--xandria-primary);
+}
+
+@media (max-width: 768px) {
+  .site-nav .site-menu { display: none; }
+  .site-nav .site-logo img { height: 44px; }
+}
+
+/* Hamburger button */
+.site-nav__toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--xandria-black);
+  position: relative;
+}
+.hamburger:before, .hamburger:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: var(--xandria-black);
+}
+.hamburger:before { top: -7px; }
+.hamburger:after { top: 7px; }
+
+/* Mobile behaviour */
+@media (max-width: 768px) {
+  .site-nav__toggle { display: flex; }
+  .site-menu { display: none; position: absolute; right: 1rem; top: 64px; background: var(--xandria-white); padding: 1rem; border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+  .site-nav.site-menu--open .site-menu { display: block; }
+}
+
 /* Call to Action Buttons */
 .btn-cta, .call-to-action {
   background-color: var(--xandria-primary);

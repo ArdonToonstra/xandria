@@ -4,6 +4,9 @@ theme = 'ananke'
 
 defaultContentLanguage = 'nl'
 
+[params]
+  site_logo = "/images/logo.png"
+
 [languages]
   [languages.nl]
     languageName = 'Nederlands'

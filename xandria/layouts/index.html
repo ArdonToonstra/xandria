@@ -1,0 +1,127 @@
+{{ define "head" }}
+  {{ partials.Include "carousel-scripts.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<div class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">Welkom bij Xandria Huisvesting</h1>
+    <p class="hero-subtitle">Uw partner in vastgoedontwikkeling en -beheer</p>
+    <div class="hero-buttons">
+      <a href="{{ "/aanbod" | relURL }}" class="btn-cta">Bekijk Aanbod</a>
+      <a href="{{ "/contact" | relURL }}" class="btn-secondary">Contact</a>
+    </div>
+  </div>
+</div>
+
+<section class="featured-properties">
+  <div class="container">
+    <h2 class="section-title">Beschikbare Appartementen</h2>
+    <div class="properties-grid">
+      {{ $aanbodPages := where .Site.Pages "Section" "aanbod" }}
+      {{ $propertyPages := where $aanbodPages "Kind" "page" }}
+      {{ range first 6 $propertyPages }}
+        <div class="property-card" data-id="{{ with .File }}{{ .BaseFileName }}{{ else }}{{ .Title | urlize }}{{ end }}">
+          <div class="property-card-wrapper">
+            <div class="property-header">
+              <h3 class="property-title">{{ .Title }}</h3>
+              <div class="property-status">
+                <span class="status-badge status-{{ .Params.status | lower | replaceRE " " "-" }}">{{ .Params.status }}</span>
+              </div>
+            </div>
+            
+            {{ with .Params.images }}
+            <div class="property-image-container">
+              <div class="property-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false }'>
+                {{ range . }}
+                  <div class="carousel-cell">
+                    <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
+                  </div>
+                {{ end }}
+              </div>
+              <div class="carousel-nav">
+                <button class="carousel-prev" type="button">&larr;</button>
+                <button class="carousel-next" type="button">&rarr;</button>
+              </div>
+            </div>
+            {{ end }}
+            
+            <div class="property-details">
+              <div class="property-price">€{{ .Params.price }}/maand</div>
+              
+              <div class="property-specs">
+                {{ with .Params.surface }}
+                <div class="spec-item">
+                  <span class="spec-icon">📐</span>
+                  <span class="spec-value">{{ . }}m²</span>
+                </div>
+                {{ end }}
+                
+                {{ with .Params.rooms }}
+                <div class="spec-item">
+                  <span class="spec-icon">🏠</span>
+                  <span class="spec-value">{{ . }} kamers</span>
+                </div>
+                {{ end }}
+                
+                {{ with .Params.bedrooms }}
+                <div class="spec-item">
+                  <span class="spec-icon">🛏️</span>
+                  <span class="spec-value">{{ . }} slaapkamers</span>
+                </div>
+                {{ end }}
+                
+                {{ if .Params.garden }}
+                <div class="spec-item">
+                  <span class="spec-icon">🌿</span>
+                  <span class="spec-value">Tuin</span>
+                </div>
+                {{ end }}
+                
+                {{ if .Params.balcony }}
+                <div class="spec-item">
+                  <span class="spec-icon">🏢</span>
+                  <span class="spec-value">Balkon</span>
+                </div>
+                {{ end }}
+              </div>
+              
+              <div class="property-action">
+                <a href="{{ .Permalink }}" class="btn-cta btn-small">Meer Info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    
+    <div class="view-all-section">
+      <a href="{{ "/aanbod" | relURL }}" class="btn-secondary btn-large">Bekijk Alle Appartementen</a>
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title">Onze Diensten</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Vastgoedontwikkeling</h3>
+        <p>Professionele ontwikkeling van kwalitatieve woonprojecten</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Vastgoedbeheer</h3>
+        <p>Volledig beheer van uw vastgoedportefeuille</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Verhuur</h3>
+        <p>Bemiddeling en beheer van verhuurpanden</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

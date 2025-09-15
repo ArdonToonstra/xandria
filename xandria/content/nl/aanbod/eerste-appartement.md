@@ -1,10 +1,59 @@
 +++
 date = '2025-09-10T19:24:18+02:00'
 draft = false
-title = 'Eerste Appartement'
+title = 'Modern Appartement Wijttenbachstraat'
+status = 'Beschikbaar'
+type = 'Appartement'
+price = 1250
+surface = 95
+rooms = 4
+bedrooms = 2
+bathrooms = 1
+garden = false
+balcony = true
+parking = true
+furnished = false
+pets_allowed = true
+smoking_allowed = false
+images = [
+  '/images/listings/eerste-appartement/woonkamer.jpg',
+  '/images/listings/eerste-appartement/keuken.jpg',
+  '/images/listings/eerste-appartement/slaapkamer.jpg',
+  '/images/listings/eerste-appartement/balkon.jpg'
+]
+features = [
+  'Centrale verwarming',
+  'Volledig gerenoveerd 2023',
+  'Energielabel A',
+  'Parkeerplaats inbegrepen',
+  'Lift aanwezig',
+  'Huisdieren toegestaan'
+]
+address = 'Wijttenbachstraat 24, 2000 Antwerpen'
+neighborhood = 'Centrum'
+available_from = '2025-10-01'
+lease_duration = 'Langetermijn'
+deposit = 2500
+utilities_included = false
 +++
 
-# Appartement Wijttenbachstraat 24
+Dit prachtige moderne appartement is gelegen in het hart van Antwerpen aan de Wijttenbachstraat. Het appartement werd volledig gerenoveerd in 2023 en beschikt over alle moderne voorzieningen.
 
-Dit is ons eerste appartement in Antwerpen, gelegen aan de Wijttenbachstraat 24. Het appartement beschikt over twee slaapkamers, een ruime woonkamer, een moderne keuken en een balkon met uitzicht op de stad. Het gebouw is recent gerenoveerd en biedt alle moderne voorzieningen.
-Het appartement is ideaal gelegen, dicht bij openbaar vervoer, winkels en restaurants. Voor meer informatie of om een bezichtiging te plannen, neem contact met ons.
+## Locatie
+Gelegen in het bruisende centrum van Antwerpen, op wandelafstand van de Grote Markt, winkelstraten en uitstekende restaurants. Openbaar vervoer ligt om de hoek met directe verbindingen naar alle delen van de stad.
+
+## Indeling
+Het appartement bestaat uit:
+- Ruime woonkamer met veel natuurlijk licht
+- Moderne open keuken volledig uitgerust
+- 2 comfortabele slaapkamers
+- Moderne badkamer met douche
+- Zonnig balkon met uitzicht op de stad
+- Bergruimte
+
+## Voorzieningen
+- Energiezuinig (label A)
+- Centrale verwarming
+- Parkeerplaats in ondergrondse garage
+- Lift naar alle verdiepingen
+- Huisdieren welkom (na overleg)

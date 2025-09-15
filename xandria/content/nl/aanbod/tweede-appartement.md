@@ -1,10 +1,57 @@
 +++
 date = '2025-09-10T19:24:18+02:00'
 draft = false
-title = 'Tweede Appartement'
+title = 'Luxe Studio Engelselei'
+status = 'Beschikbaar'
+type = 'Studio'
+price = 875
+surface = 55
+rooms = 2
+bedrooms = 1
+bathrooms = 1
+garden = false
+balcony = true
+parking = false
+furnished = true
+pets_allowed = false
+smoking_allowed = false
+images = [
+  '/images/listings/tweede-appartement/studio-overzicht.jpg',
+  '/images/listings/tweede-appartement/keuken-eiland.jpg',
+  '/images/listings/tweede-appartement/slaapgedeelte.jpg',
+  '/images/listings/tweede-appartement/badkamer.jpg'
+]
+features = [
+  'Volledig gemeubileerd',
+  'Airconditioning',
+  'Energielabel B',
+  'High-speed internet',
+  'Smart TV inbegrepen',
+  'Moderne badkamer'
+]
+address = 'Engelselei 4, 2000 Antwerpen'
+neighborhood = 'Zuid'
+available_from = '2025-09-15'
+lease_duration = 'Kort- en langetermijn mogelijk'
+deposit = 1750
+utilities_included = true
 +++
 
-# Appartement Engelselei 4
+Deze stijlvolle volledig gemeubileerde studio ligt in de trendy wijk Antwerpen-Zuid, bekend om zijn artistieke flair en uitstekende restaurants.
 
-Dit is ons tweede appartement in Antwerpen, gelegen aan de Engelselei 4. Het appartement beschikt over twee slaapkamers, een ruime woonkamer, een moderne keuken en een balkon met uitzicht op de stad. Het gebouw is recent gerenoveerd en biedt alle moderne voorzieningen.
-Het appartement is ideaal gelegen, dicht bij openbaar vervoer, winkels en restaurants. Voor meer informatie of om een bezichtiging te plannen, neem contact met ons.
+## Locatie
+Gelegen in het kunstenaarskwartier van Antwerpen-Zuid, omringd door galerijen, design winkels en authentieke cafés. Het Museum voor Schone Kunsten en het Koninklijk Museum voor Schone Kunsten liggen op wandelafstand.
+
+## Indeling
+De studio is slim ingedeeld en bestaat uit:
+- Open leefruimte met moderne keuken
+- Comfortabel slaapgedeelte
+- Stijlvolle badkamer
+- Klein balkon perfect voor de ochtendkoffie
+
+## Voorzieningen
+- Volledig gemeubileerd en direct bewoonbaar
+- Airconditioning voor optimaal comfort
+- Alle utilities inbegrepen (water, gas, elektriciteit, internet)
+- Moderne apparatuur en smart home functionaliteiten
+- Perfecte starter of tijdelijke bewoning

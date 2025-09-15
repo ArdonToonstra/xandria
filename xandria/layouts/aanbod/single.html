@@ -1,9 +1,15 @@
 {{ define "main" }}
-  <article class="listing-detail">
-    <h1>{{ .Title }}</h1>
-    <p class="listing-meta">
-      <strong>Status:</strong> {{ .Params.status }} | <strong>Prijs:</strong> €{{ .Params.price }}/maand
-    </p>
+  <article class="listing-detail" style="max-width: 1000px; margin: 0 auto; padding: 2rem;">
+    <h1 style="font-family: 'Bree Serif', serif; color: var(--xandria-primary, #1800ad); font-size: 2.5rem; margin-bottom: 1rem;">{{ .Title }}</h1>
+    
+    <div class="listing-meta" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+      <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+        <span class="status-badge status-{{ .Params.status | lower | replaceRE " " "-" }}">{{ .Params.status }}</span>
+      </p>
+      <p style="font-size: 1.25rem; font-weight: 600; color: #1800ad; margin: 0;">
+        <strong>Prijs:</strong> €{{ .Params.price }}/maand
+      </p>
+    </div>
 
     <div class="gallery">
       {{ range .Params.images }}
@@ -11,14 +17,16 @@
       {{ end }}
     </div>
 
-    <div class="content">
-      <h2>Beschrijving</h2>
-      {{ .Content }}
+    <div class="content" style="margin: 2rem 0;">
+      <h2 style="font-family: 'Montserrat', sans-serif; color: #1800ad; border-bottom: 2px solid #99c5ff; padding-bottom: 0.5rem;">Beschrijving</h2>
+      <div style="font-family: 'Open Sans', sans-serif; line-height: 1.6; font-size: 1.1rem;">
+        {{ .Content }}
+      </div>
     </div>
 
     {{ with .Params.features }}
-      <div class="features">
-        <h3>Kenmerken</h3>
+      <div class="features" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-top: 2rem;">
+        <h3 style="font-family: 'Montserrat', sans-serif; color: #1800ad; margin-bottom: 1rem;">Kenmerken</h3>
         <ul>
           {{ range . }}
             <li>{{ . }}</li>
@@ -26,6 +34,11 @@
         </ul>
       </div>
     {{ end }}
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="mailto:info@xandria.be?subject=Interesse in {{ .Title }}" class="btn-cta" style="margin-right: 1rem;">Contact Opnemen</a>
+      <a href="{{ "/aanbod" | relURL }}" class="btn-secondary">Terug naar Overzicht</a>
+    </div>
 
   </article>
 {{ end }}

@@ -21,6 +21,13 @@
 
 
 
+
+
+
+  
+  <link rel="stylesheet" href="/css/custom.min.css">
+
+
     
 
 
@@ -51,6 +58,46 @@
   <meta name="twitter:title" content="Xandria Huisvesting">
 
 	
+  
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  
+  var carousels = document.querySelectorAll('.property-carousel');
+  
+  carousels.forEach(function(carousel) {
+    var flkty = new Flickity(carousel, {
+      cellAlign: 'left',
+      contain: true,
+      pageDots: false,
+      prevNextButtons: false,
+      draggable: true,
+      wrapAround: true
+    });
+    
+    
+    var propertyCard = carousel.closest('.property-card');
+    var prevBtn = propertyCard.querySelector('.carousel-prev');
+    var nextBtn = propertyCard.querySelector('.carousel-next');
+    
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', function() {
+        flkty.previous();
+      });
+      
+      nextBtn.addEventListener('click', function() {
+        flkty.next();
+      });
+    }
+  });
+});
+</script>
+
+
   </head><body class="ma0 avenir bg-near-white development">
 
     
@@ -95,17 +142,55 @@
 
     <main class="pb7" role="main">
       
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
+<div class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">Welkom bij Xandria Huisvesting</h1>
+    <p class="hero-subtitle">Uw partner in vastgoedontwikkeling en -beheer</p>
+    <div class="hero-buttons">
+      <a href="/aanbod" class="btn-cta">Bekijk Aanbod</a>
+      <a href="/contact" class="btn-secondary">Contact</a>
+    </div>
+  </div>
+</div>
+
+<section class="featured-properties">
+  <div class="container">
+    <h2 class="section-title">Beschikbare Appartementen</h2>
+    <div class="properties-grid">
+      
+      
+      
+    </div>
     
-  </article>
+    <div class="view-all-section">
+      <a href="/aanbod" class="btn-secondary btn-large">Bekijk Alle Appartementen</a>
+    </div>
+  </div>
+</section>
 
-  
-  
-  
-  
-  
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title">Onze Diensten</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Vastgoedontwikkeling</h3>
+        <p>Professionele ontwikkeling van kwalitatieve woonprojecten</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Vastgoedbeheer</h3>
+        <p>Volledig beheer van uw vastgoedportefeuille</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Verhuur</h3>
+        <p>Bemiddeling en beheer van verhuurpanden</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

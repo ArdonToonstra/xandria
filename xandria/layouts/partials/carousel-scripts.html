@@ -1,0 +1,38 @@
+<!-- Flickity CSS -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+<!-- Flickity JS -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize Flickity carousels
+  var carousels = document.querySelectorAll('.property-carousel');
+  
+  carousels.forEach(function(carousel) {
+    var flkty = new Flickity(carousel, {
+      cellAlign: 'left',
+      contain: true,
+      pageDots: false,
+      prevNextButtons: false,
+      draggable: true,
+      wrapAround: true
+    });
+    
+    // Custom navigation buttons
+    var propertyCard = carousel.closest('.property-card');
+    var prevBtn = propertyCard.querySelector('.carousel-prev');
+    var nextBtn = propertyCard.querySelector('.carousel-next');
+    
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', function() {
+        flkty.previous();
+      });
+      
+      nextBtn.addEventListener('click', function() {
+        flkty.next();
+      });
+    }
+  });
+});
+</script>

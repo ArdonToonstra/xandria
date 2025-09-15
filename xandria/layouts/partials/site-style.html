@@ -1,0 +1,18 @@
+{{ with partials.IncludeCached "func/style/GetMainCSS.html" "style/GetMainCSS" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" >
+{{ end }}
+
+{{ range site.Params.custom_css }}
+  {{ with partials.IncludeCached "func/style/GetResource.html" . . }}{{ else }}
+    <link rel="stylesheet" href="{{ urls.RelURL (.) }}">
+  {{ end }}
+{{ end }}
+
+<!-- Xandria Custom CSS -->
+{{ $customCSS := resources.Get "css/custom.css" }}
+{{ if $customCSS }}
+  {{ $customCSS = $customCSS | resources.Minify }}
+  <link rel="stylesheet" href="{{ $customCSS.RelPermalink }}">
+{{ else }}
+  <link rel="stylesheet" href="{{ "/css/custom.css" | relURL }}">
+{{ end }}

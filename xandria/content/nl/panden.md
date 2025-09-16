@@ -4,8 +4,6 @@ draft = false
 title = 'Panden'
 +++
 
-# Panden
-
 Wij zijn vooral geïnteresseerd in de aankoop van de volgende types panden in Antwerpen en nabije omgeving:
 
 - Appartementen en kleine appartementsblokken (meerdere woningen onder één eigenaar).

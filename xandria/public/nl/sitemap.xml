@@ -21,19 +21,19 @@
     <loc>http://localhost:1313/over-ons/</loc>
     <lastmod>2025-09-16T10:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aanbod/</loc>
+    <loc>http://localhost:1313/te-huur/penthouse-dakterras/</loc>
     <lastmod>2025-09-10T20:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aanbod/penthouse-dakterras/</loc>
+    <loc>http://localhost:1313/te-huur/appartement-tuin/</loc>
     <lastmod>2025-09-10T20:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aanbod/appartement-tuin/</loc>
+    <loc>http://localhost:1313/te-huur/</loc>
     <lastmod>2025-09-10T20:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aanbod/tweede-appartement/</loc>
+    <loc>http://localhost:1313/te-huur/tweede-appartement/</loc>
     <lastmod>2025-09-10T19:24:18+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/aanbod/eerste-appartement/</loc>
+    <loc>http://localhost:1313/te-huur/eerste-appartement/</loc>
     <lastmod>2025-09-10T19:24:18+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/contact/</loc>

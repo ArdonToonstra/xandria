@@ -7,10 +7,6 @@
   <div class="hero-content">
     <h1 class="hero-title">Welkom bij Xandria Huisvesting</h1>
     <p class="hero-subtitle">Uw partner in vastgoedontwikkeling en -beheer</p>
-    <div class="hero-buttons">
-      <a href="{{ "/aanbod" | relURL }}" class="btn-cta">Bekijk Aanbod</a>
-      <a href="{{ "/contact" | relURL }}" class="btn-secondary">Contact</a>
-    </div>
   </div>
 </div>
 
@@ -18,8 +14,8 @@
   <div class="container">
     <h2 class="section-title">Beschikbare Appartementen</h2>
     <div class="properties-grid">
-      {{ $aanbodPages := where .Site.Pages "Section" "aanbod" }}
-      {{ $propertyPages := where $aanbodPages "Kind" "page" }}
+      {{ $teHuurPages := where .Site.Pages "Section" "te-huur" }}
+      {{ $propertyPages := where $teHuurPages "Kind" "page" }}
       {{ range first 6 $propertyPages }}
         <div class="property-card" data-id="{{ with .File }}{{ .BaseFileName }}{{ else }}{{ .Title | urlize }}{{ end }}">
           <div class="property-card-wrapper">
@@ -32,7 +28,7 @@
             
             {{ with .Params.images }}
             <div class="property-image-container">
-              <div class="property-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false }'>
+              <div class="property-carousel">
                 {{ range . }}
                   <div class="carousel-cell">
                     <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
@@ -96,7 +92,7 @@
     </div>
     
     <div class="view-all-section">
-      <a href="{{ "/aanbod" | relURL }}" class="btn-secondary btn-large">Bekijk Alle Appartementen</a>
+      <a href="{{ "/te-huur" | relURL }}" class="btn-secondary btn-large">Bekijk Alle Appartementen</a>
     </div>
   </div>
 </section>

@@ -286,6 +286,7 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 .site-logo {
   display: inline-block;
   vertical-align: middle;
+  padding-left: 25rem; /* Adjust this value as needed */
 }
 .site-logo img {
   height: 48px;
@@ -601,5 +602,11 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   
   .property-specs {
     justify-content: center;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .site-logo {
+    padding-left: 20rem; /* Adjust this value as needed */
   }
 }

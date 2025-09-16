@@ -47,8 +47,8 @@ collections:
 
   # Collectie voor het verhuuraanbod
   - name: "listings"
-    label: "Aanbod"
-    folder: "content/aanbod" # Decap zoekt zelf in /nl en /en
+    label: "Te Huur"
+    folder: "content/te-huur" # Decap zoekt zelf in /nl en /en
     create: true
     i18n: true # Activeer meertaligheid voor deze collectie
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"

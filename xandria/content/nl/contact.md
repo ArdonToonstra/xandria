@@ -4,8 +4,6 @@ draft = false
 title = 'Contact'
 +++
 
-# Contact
-
 Voor vragen of opmerkingen kunt u contact met ons opnemen via [email](mailto:info@xandria.nl).
 U kunt ons ook bereiken via telefoonnummer: +31 20 123 4567.
 Onze contacturen zijn van maandag tot en met vrijdag, van 9:00 tot 17:00.

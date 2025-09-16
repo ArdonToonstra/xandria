@@ -64,38 +64,8 @@
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  
-  var carousels = document.querySelectorAll('.property-carousel');
-  
-  carousels.forEach(function(carousel) {
-    var flkty = new Flickity(carousel, {
-      cellAlign: 'left',
-      contain: true,
-      pageDots: false,
-      prevNextButtons: false,
-      draggable: true,
-      wrapAround: true
-    });
-    
-    
-    var propertyCard = carousel.closest('.property-card');
-    var prevBtn = propertyCard.querySelector('.carousel-prev');
-    var nextBtn = propertyCard.querySelector('.carousel-next');
-    
-    if (prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', function() {
-        flkty.previous();
-      });
-      
-      nextBtn.addEventListener('click', function() {
-        flkty.next();
-      });
-    }
-  });
-});
-</script>
+
+<script src="/js/carousel.js"></script>
 
 
   </head><body class="ma0 avenir bg-near-white development">
@@ -118,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="flex-l items-center">
       <ul class="pl0 mr3 site-menu" role="menu">
         <li class="list f5 f4-ns fw4 dib pr3" role="none"><a role="menuitem" class="no-underline" href="/over-ons">Over Ons</a></li>
-        <li class="list f5 f4-ns fw4 dib pr3" role="none"><a role="menuitem" class="no-underline" href="/aanbod">Te huur</a></li>
+        <li class="list f5 f4-ns fw4 dib pr3" role="none"><a role="menuitem" class="no-underline" href="/te-huur">Te huur</a></li>
         <li class="list f5 f4-ns fw4 dib pr3" role="none"><a role="menuitem" class="no-underline" href="/panden">Panden</a></li>
         <li class="list f5 f4-ns fw4 dib pr3" role="none"><a role="menuitem" class="no-underline" href="/contact">Contact</a></li>
       </ul>
@@ -165,10 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="hero-content">
     <h1 class="hero-title">Welkom bij Xandria Huisvesting</h1>
     <p class="hero-subtitle">Uw partner in vastgoedontwikkeling en -beheer</p>
-    <div class="hero-buttons">
-      <a href="/aanbod" class="btn-cta">Bekijk Aanbod</a>
-      <a href="/contact" class="btn-secondary">Contact</a>
-    </div>
   </div>
 </div>
 
@@ -182,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="view-all-section">
-      <a href="/aanbod" class="btn-secondary btn-large">Bekijk Alle Appartementen</a>
+      <a href="/te-huur" class="btn-secondary btn-large">Bekijk Alle Appartementen</a>
     </div>
   </div>
 </section>

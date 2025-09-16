@@ -1,0 +1,6 @@
+{{/* Shortcode: contact-form
+   Usage: {{< contact-form >}} or {{< contact-form script="https://..." >}}
+   Renders the `contact-form` partial and passes through the `script` param.
+*/}}
+{{ $script := .Get "script" | default "" }}
+{{ partial "contact-form.html" (dict "script" $script "Site" .Site) }}

@@ -6,6 +6,9 @@ defaultContentLanguage = 'nl'
 
 [params]
   site_logo = "/images/logo.png"
+  # Set this to your deployed Apps Script web app URL (or override per-shortcode)
+  contactScriptURL = "https://script.google.com/macros/s/AKfycbw_YZFncG9G4tmUNkW_xlorfNn8lbaVjst7dFfgpVw6hw30j_7hRvcbCeJIOxH7OMFO/exec"
+  # The secret is now read from the CONTACT_FORM_SECRET environment variable during build.
 
 [languages]
   [languages.nl]
@@ -18,3 +21,7 @@ defaultContentLanguage = 'nl'
     languageCode = 'en-US'
     contentDir = 'content/en' 
     weight = 2
+
+[security]
+  [security.funcs]
+    getenv = ["^HUGO_", "^CI$", "CONTACT_FORM_SECRET"]

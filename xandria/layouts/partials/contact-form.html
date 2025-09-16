@@ -1,0 +1,60 @@
+{{/* contact-form.html
+   Minimal partial that only supports an Apps Script web app URL. Provide the
+   URL via shortcode param `script` or `Site.Params.contactScriptURL` in
+   `hugo.toml`. Optional: set `params.contactFormSecret` to include a hidden
+   `secret` field. */}}
+
+{{ $ctx := . }}
+{{ $script := "" }}
+{{/* prefer explicit non-empty script from context; otherwise fall back to site param */}}
+{{ if and (isset $ctx "script") (ne (index $ctx "script") "") }}
+  {{ $script = index $ctx "script" }}
+{{ else if and (isset $ctx "Site") (index $ctx "Site").Params.contactScriptURL }}
+  {{ $script = (index $ctx "Site").Params.contactScriptURL }}
+{{ else if .Site.Params.contactScriptURL }}
+  {{ $script = .Site.Params.contactScriptURL }}
+{{ end }}
+
+{{ if not $script }}
+  <!-- contact form not configured: render nothing -->
+{{ else }}
+  <form id="contact-form" class="contact-form" data-script-url="{{ $script }}">
+    <div>
+      <label for="voornaam">Voornaam:</label>
+      <input type="text" id="voornaam" name="voornaam" required>
+    </div>
+
+    <div>
+      <label for="achternaam">Achternaam:</label>
+      <input type="text" id="achternaam" name="achternaam" required>
+    </div>
+
+    <div>
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div>
+      <label for="telefoon">Telefoon:</label>
+      <input type="tel" id="telefoon" name="telefoon">
+    </div>
+
+    <div>
+      <label for="bericht">Bericht:</label>
+      <textarea id="bericht" name="bericht" required></textarea>
+    </div>
+
+    {{/* Read secret from environment variable to avoid checking it into git */}}
+    {{ with getenv "CONTACT_FORM_SECRET" }}
+      <input type="hidden" name="secret" value="{{ . }}">
+    {{ end }}
+
+    <div>
+      <button type="submit" class="btn-cta">Verstuur</button>
+    </div>
+
+    <div id="form-status" aria-live="polite"></div>
+  </form>
+
+  <script src="/js/contact-form.js" defer></script>
+{{ end }}

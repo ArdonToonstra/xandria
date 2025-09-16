@@ -17,10 +17,7 @@ pets_allowed = true
 smoking_allowed = false
 images = [
   '/images/listings/eerste-appartement/0.jpg',
-  '/images/listings/eerste-appartement/1.jpg',
-  '/images/listings/eerste-appartement/2.jpg',
-  '/images/listings/eerste-appartement/3.jpg',
-  '/images/listings/eerste-appartement/4.jpg'
+  '/images/listings/eerste-appartement/1.jpg'
 ]
 features = [
   'Centrale verwarming',

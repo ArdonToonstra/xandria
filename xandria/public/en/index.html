@@ -65,7 +65,37 @@
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 
-<script src="/js/carousel.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var carousels = document.querySelectorAll('.property-carousel');
+  carousels.forEach(function(carousel) {
+    var flickity = new Flickity(carousel, {
+      cellAlign: 'left',
+      contain: true,
+      pageDots: false,
+      prevNextButtons: false
+    });
+
+    var nav = carousel.closest('.property-image-container').querySelector('.carousel-nav');
+    if (nav) {
+      var prevButton = nav.querySelector('.carousel-prev');
+      var nextButton = nav.querySelector('.carousel-next');
+
+      if (prevButton) {
+        prevButton.addEventListener('click', function() {
+          flickity.previous();
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener('click', function() {
+          flickity.next();
+        });
+      }
+    }
+  });
+});
+</script>
 
 
   </head><body class="ma0 avenir bg-near-white development">
@@ -178,15 +208,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/en/" >
-    &copy;  Xandria Huisvesting 2025 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
+    <footer class="site-footer bg-near-black pv4 ph3">
+  <div class="mw7 center">
+    <div class="flex-l items-start justify-between">
+      
+      <div class="mb4 mb0-l pr4-l">
+        <h3 class="ma0 f4 footer-text-white mb3">Xandria Huisvesting</h3>
+        <p class="f6 lh-copy mb2 footer-text-light">
+          Uw partner in vastgoedontwikkeling en -beheer in Antwerpen en omgeving.
+        </p>
+      </div>
+
+      
+      <div class="mb4 mb0-l pr4-l">
+        <h4 class="f6 fw6 footer-text-white mb3 ttu tracked">Navigatie</h4>
+        <ul class="list pl0 ma0">
+          <li class="mb2"><a href="/" class="f6 no-underline footer-text-light footer-link">Home</a></li>
+          <li class="mb2"><a href="/over-ons" class="f6 no-underline footer-text-light footer-link">Over Ons</a></li>
+          <li class="mb2"><a href="/te-huur" class="f6 no-underline footer-text-light footer-link">Te Huur</a></li>
+          <li class="mb2"><a href="/panden" class="f6 no-underline footer-text-light footer-link">Panden</a></li>
+          <li class="mb2"><a href="/contact" class="f6 no-underline footer-text-light footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      
+      <div class="mb4 mb0-l">
+        <h4 class="f6 fw6 footer-text-white mb3 ttu tracked">Contact</h4>
+        <div class="f6 lh-copy">
+          <p class="mb2">
+            <a href="mailto:info@xandria.be" class="no-underline footer-text-white footer-link">info@xandria.be</a>
+          </p>
+          <p class="mb2">
+            <a href="tel:+32123456789" class="no-underline footer-text-white footer-link">+32 123 456 789</a>
+          </p>
+          <p class="mb0 footer-text-light">
+            Antwerpen, België
+          </p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="bt b--white-20 pt3 mt4">
+      <div class="flex-l items-center justify-between">
+        <p class="f7 footer-text-lighter ma0">
+          © 2025 Xandria Huisvesting. Alle rechten voorbehouden.
+        </p>
+        <div class="flex items-center mt3 mt0-l">
+          <a href="#" class="f7 no-underline footer-text-lighter footer-link mr3">Privacybeleid</a>
+          <a href="#" class="f7 no-underline footer-text-lighter footer-link">Algemene Voorwaarden</a>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
-
   </body>
 </html>

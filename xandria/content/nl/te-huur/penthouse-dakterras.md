@@ -18,10 +18,7 @@ pets_allowed = false
 smoking_allowed = false
 images = [
   '/images/listings/penthouse/1.jpg',
-  '/images/listings/penthouse/2.jpg',
-  '/images/listings/penthouse/3.jpg',
-  '/images/listings/penthouse/4.jpg',
-  '/images/listings/penthouse/5.jpg'
+  '/images/listings/penthouse/2.jpg'
 ]
 features = [
   'Dakterras van 60m²',

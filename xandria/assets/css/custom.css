@@ -15,7 +15,28 @@
 h1, .f2, .f-subheadline-l {
   font-family: 'Bree Serif', serif !important;
   color: var(--xandria-primary) !important;
-  font-weight: 400 !important;
+  font-weight: 400 !imp@media screen and (min-width: 60em) {
+  .site-logo {
+    padding-left: 20rem; /* Adjust this value as needed */
+  }
+}
+
+/* Footer Opacity Classes */
+.footer-text-light {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.footer-text-lighter {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.footer-text-white {
+  color: white !important;
+}
+
+.footer-link:hover {
+  color: rgba(153, 197, 255, 1) !important;
+}t;
 }
 
 h2, .f3, .f4 {

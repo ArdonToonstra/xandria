@@ -18,9 +18,7 @@ smoking_allowed = false
 images = [
   '/images/listings/appartement-tuin/1.jpg',
   '/images/listings/appartement-tuin/2.jpg',
-  '/images/listings/appartement-tuin/3.jpg',
-  '/images/listings/appartement-tuin/4.jpg',
-  '/images/listings/appartement-tuin/5.jpg'
+  '/images/listings/appartement-tuin/3.jpg'
 ]
 features = [
   'Privé tuin van 40m²',

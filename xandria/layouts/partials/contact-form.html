@@ -19,29 +19,30 @@
   <!-- contact form not configured: render nothing -->
 {{ else }}
   <form id="contact-form" class="contact-form" data-script-url="{{ $script }}">
-    <div>
-      <label for="voornaam">Voornaam:</label>
-      <input type="text" id="voornaam" name="voornaam" required>
+    <div class="form-row">
+      <div class="form-group">
+        <input type="text" id="voornaam" name="voornaam" placeholder=" " required>
+        <label for="voornaam">Voornaam<span class="req-star">*</span></label>
+      </div>
+      <div class="form-group">
+        <input type="text" id="achternaam" name="achternaam" placeholder=" " required>
+        <label for="achternaam">Achternaam<span class="req-star">*</span></label>
+      </div>
     </div>
 
-    <div>
-      <label for="achternaam">Achternaam:</label>
-      <input type="text" id="achternaam" name="achternaam" required>
+    <div class="form-group">
+      <input type="email" id="email" name="email" placeholder=" " required>
+      <label for="email">E-mail<span class="req-star">*</span></label>
     </div>
 
-    <div>
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
+    <div class="form-group">
+      <input type="tel" id="telefoon" name="telefoon" placeholder=" ">
+      <label for="telefoon">Telefoon</label>
     </div>
 
-    <div>
-      <label for="telefoon">Telefoon:</label>
-      <input type="tel" id="telefoon" name="telefoon">
-    </div>
-
-    <div>
-      <label for="bericht">Bericht:</label>
-      <textarea id="bericht" name="bericht" required></textarea>
+    <div class="form-group">
+      <textarea id="bericht" name="bericht" placeholder=" " required></textarea>
+      <label for="bericht">Bericht<span class="req-star">*</span></label>
     </div>
 
     {{/* Read secret from environment variable to avoid checking it into git */}}
@@ -49,7 +50,7 @@
       <input type="hidden" name="secret" value="{{ . }}">
     {{ end }}
 
-    <div>
+    <div class="form-group">
       <button type="submit" class="btn-cta">Verstuur</button>
     </div>
 

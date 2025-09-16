@@ -9,25 +9,30 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
     if (!scriptURL) {
       statusDiv.textContent = 'Contactformulier is niet geconfigureerd.';
+      statusDiv.className = 'error';
       return;
     }
 
     var formData = new FormData(form);
     statusDiv.textContent = 'Bezig met versturen...';
+    statusDiv.className = 'sending';
 
     fetch(scriptURL, { method: 'POST', body: formData })
       .then(function (response) { return response.json(); })
       .then(function (data) {
         if (data && data.result === 'success') {
           statusDiv.textContent = 'Bedankt! Je bericht is succesvol ontvangen.';
+          statusDiv.className = 'success';
           form.reset();
         } else {
           statusDiv.textContent = 'Oeps! Er is iets misgegaan. Probeer het later opnieuw.';
+          statusDiv.className = 'error';
           console.error('Form error', data);
         }
       })
       .catch(function (err) {
         statusDiv.textContent = 'Oeps! Er is iets misgegaan. Probeer het later opnieuw.';
+        statusDiv.className = 'error';
         console.error('Fetch error', err);
       });
   });

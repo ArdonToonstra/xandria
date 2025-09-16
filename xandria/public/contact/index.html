@@ -8,28 +8,29 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="
     
-      Voornaam:
+      
+        
+        Voornaam*
+      
+      
+        
+        Achternaam*
       
     
 
     
-      Achternaam:
       
+      E-mail*
     
 
     
-      E-mail:
       
+      Telefoon
     
 
     
-      Telefoon:
       
-    
-
-    
-      Bericht:
-      
+      Bericht*
     
 
     
@@ -89,20 +90,20 @@ Onze contacturen zijn van maandag tot en met vrijdag, van 9:00 tot 17:00.">
     <meta property="og:url" content="http://localhost:1313/contact/">
   <meta property="og:site_name" content="Xandria Huisvesting">
   <meta property="og:title" content="Contact">
-  <meta property="og:description" content="Voornaam:Achternaam:E-mail:Telefoon:Bericht:VerstuurVoor vragen of opmerkingen kunt u contact met ons opnemen via email. U kunt ons ook bereiken via telefoonnummer: &#43;31 20 123 4567. Onze contacturen zijn van maandag tot en met vrijdag, van 9:00 tot 17:00.">
+  <meta property="og:description" content="Voornaam*Achternaam*E-mail*TelefoonBericht*VerstuurVoor vragen of opmerkingen kunt u contact met ons opnemen via email. U kunt ons ook bereiken via telefoonnummer: &#43;31 20 123 4567. Onze contacturen zijn van maandag tot en met vrijdag, van 9:00 tot 17:00.">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:type" content="article">
     <meta property="article:published_time" content="2025-09-10T19:14:11+02:00">
     <meta property="article:modified_time" content="2025-09-10T19:14:11+02:00">
 
   <meta itemprop="name" content="Contact">
-  <meta itemprop="description" content="Voornaam:Achternaam:E-mail:Telefoon:Bericht:VerstuurVoor vragen of opmerkingen kunt u contact met ons opnemen via email. U kunt ons ook bereiken via telefoonnummer: &#43;31 20 123 4567. Onze contacturen zijn van maandag tot en met vrijdag, van 9:00 tot 17:00.">
+  <meta itemprop="description" content="Voornaam*Achternaam*E-mail*TelefoonBericht*VerstuurVoor vragen of opmerkingen kunt u contact met ons opnemen via email. U kunt ons ook bereiken via telefoonnummer: &#43;31 20 123 4567. Onze contacturen zijn van maandag tot en met vrijdag, van 9:00 tot 17:00.">
   <meta itemprop="datePublished" content="2025-09-10T19:14:11+02:00">
   <meta itemprop="dateModified" content="2025-09-10T19:14:11+02:00">
   <meta itemprop="wordCount" content="42">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Contact">
-  <meta name="twitter:description" content="Voornaam:Achternaam:E-mail:Telefoon:Bericht:VerstuurVoor vragen of opmerkingen kunt u contact met ons opnemen via email. U kunt ons ook bereiken via telefoonnummer: &#43;31 20 123 4567. Onze contacturen zijn van maandag tot en met vrijdag, van 9:00 tot 17:00.">
+  <meta name="twitter:description" content="Voornaam*Achternaam*E-mail*TelefoonBericht*VerstuurVoor vragen of opmerkingen kunt u contact met ons opnemen via email. U kunt ons ook bereiken via telefoonnummer: &#43;31 20 123 4567. Onze contacturen zijn van maandag tot en met vrijdag, van 9:00 tot 17:00.">
 
 	
   </head><body class="ma0 avenir bg-near-white development">
@@ -196,29 +197,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   <form id="contact-form" class="contact-form" data-script-url="https://script.google.com/macros/s/AKfycbw_YZFncG9G4tmUNkW_xlorfNn8lbaVjst7dFfgpVw6hw30j_7hRvcbCeJIOxH7OMFO/exec">
-    <div>
-      <label for="voornaam">Voornaam:</label>
-      <input type="text" id="voornaam" name="voornaam" required>
+    <div class="form-row">
+      <div class="form-group">
+        <input type="text" id="voornaam" name="voornaam" placeholder=" " required>
+        <label for="voornaam">Voornaam<span class="req-star">*</span></label>
+      </div>
+      <div class="form-group">
+        <input type="text" id="achternaam" name="achternaam" placeholder=" " required>
+        <label for="achternaam">Achternaam<span class="req-star">*</span></label>
+      </div>
     </div>
 
-    <div>
-      <label for="achternaam">Achternaam:</label>
-      <input type="text" id="achternaam" name="achternaam" required>
+    <div class="form-group">
+      <input type="email" id="email" name="email" placeholder=" " required>
+      <label for="email">E-mail<span class="req-star">*</span></label>
     </div>
 
-    <div>
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
+    <div class="form-group">
+      <input type="tel" id="telefoon" name="telefoon" placeholder=" ">
+      <label for="telefoon">Telefoon</label>
     </div>
 
-    <div>
-      <label for="telefoon">Telefoon:</label>
-      <input type="tel" id="telefoon" name="telefoon">
-    </div>
-
-    <div>
-      <label for="bericht">Bericht:</label>
-      <textarea id="bericht" name="bericht" required></textarea>
+    <div class="form-group">
+      <textarea id="bericht" name="bericht" placeholder=" " required></textarea>
+      <label for="bericht">Bericht<span class="req-star">*</span></label>
     </div>
 
     
@@ -226,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <input type="hidden" name="secret" value="wvLnIoQP6ZvgfWeuLrm9M5iiopuomPl7bjX0pXNpIQZBz5uWU4">
     
 
-    <div>
+    <div class="form-group">
       <button type="submit" class="btn-cta">Verstuur</button>
     </div>
 

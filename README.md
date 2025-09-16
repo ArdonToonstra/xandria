@@ -41,6 +41,14 @@ Create a new listing markdown file under `content/nl/te-huur/<slug>/index.md` wi
 ## Admin / CMS
 - The Decap (Netlify) admin config lives in `static/admin/config.yml`. It was updated to point to `content/te-huur`.
 
+## Contact Form
+- A reusable contact form is implemented in `layouts/partials/contact-form.html`.
+- It can be embedded into any content page using the `{{< contact-form >}}` shortcode.
+- The form submits data to a Google Apps Script web app via an AJAX request handled by `static/js/contact-form.js`.
+- **Configuration**:
+    - The Apps Script URL must be set in `hugo.toml` under `params.contactScriptURL`.
+    - For security, a secret token can be passed to the script via the `CONTACT_FORM_SECRET` environment variable. The build configuration in `hugo.toml` is set up to allow Hugo to access this variable.
+
 ## Styling
 - Keep site-specific styles in `assets/css/custom.css`. If you need to override theme styles, add specific selectors here.
 

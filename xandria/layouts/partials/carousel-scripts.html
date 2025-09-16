@@ -9,6 +9,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   var carousels = document.querySelectorAll('.property-carousel');
   carousels.forEach(function(carousel) {
+    // Skip carousels that are explicitly marked as non-carousel (unavailable listings)
+    if (carousel.closest('.property-image-container') && carousel.closest('.property-image-container').classList.contains('no-carousel')) {
+      return;
+    }
     var flickity = new Flickity(carousel, {
       cellAlign: 'left',
       contain: true,

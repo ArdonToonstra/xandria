@@ -1,0 +1,82 @@
+{{/* property-card.html
+   Expects the current context `.` to be a page representing a listing
+*/}}
+{{- $page := . -}}
+{{- $isUnavailable := eq $page.Params.status "Niet beschikbaar" -}}
+<div class="property-card" data-id="{{ with $page.File }}{{ .BaseFileName }}{{ else }}{{ $page.Title | urlize }}{{ end }}">
+  <div class="property-card-wrapper">
+    <div class="property-header">
+      <h3 class="property-title">{{ $page.Title }}</h3>
+      <div class="property-status">
+        <span class="status-badge status-{{ $page.Params.status | lower | replaceRE " " "-" }}">{{ $page.Params.status }}</span>
+      </div>
+    </div>
+
+    {{ with $page.Params.images }}
+    <div class="property-image-container{{ if $isUnavailable }} no-carousel{{ end }}">
+      <div class="property-carousel">
+        {{ range . }}
+          <div class="carousel-cell">
+            <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy">
+          </div>
+        {{ end }}
+      </div>
+      {{ if not $isUnavailable }}
+      <div class="carousel-nav">
+        <button class="carousel-prev" type="button">&larr;</button>
+        <button class="carousel-next" type="button">&rarr;</button>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="property-details">
+      {{ if not $isUnavailable }}
+      <div class="property-price">€{{ $page.Params.price }}/maand</div>
+      {{ end }}
+
+      <div class="property-specs">
+        {{ with $page.Params.surface }}
+        <div class="spec-item">
+          <span class="spec-icon">📐</span>
+          <span class="spec-value">{{ . }}m²</span>
+        </div>
+        {{ end }}
+
+        {{ with $page.Params.rooms }}
+        <div class="spec-item">
+          <span class="spec-icon">🏠</span>
+          <span class="spec-value">{{ . }} kamers</span>
+        </div>
+        {{ end }}
+
+        {{ with $page.Params.bedrooms }}
+        <div class="spec-item">
+          <span class="spec-icon">🛏️</span>
+          <span class="spec-value">{{ . }} slaapkamers</span>
+        </div>
+        {{ end }}
+
+        {{ if $page.Params.garden }}
+        <div class="spec-item">
+          <span class="spec-icon">🌿</span>
+          <span class="spec-value">Tuin</span>
+        </div>
+        {{ end }}
+
+        {{ if $page.Params.balcony }}
+        <div class="spec-item">
+          <span class="spec-icon">🏢</span>
+          <span class="spec-value">Balkon</span>
+        </div>
+        {{ end }}
+      </div>
+
+      {{ if not $isUnavailable }}
+      <div class="property-action">
+        <a href="{{ $page.Permalink }}" class="btn-cta btn-small">Meer Info</a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>

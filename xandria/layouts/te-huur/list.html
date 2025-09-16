@@ -3,30 +3,7 @@
     <h1 class="page-title">{{ .Title }}</h1>
     <div class="listing-summary">
       {{ range .Pages }}
-        <article class="listing-card">
-          <a href="{{ .Permalink }}">
-            {{ with .Params.images }}
-              <img src="{{ index . 0 | relURL }}" alt="{{ $.Title }}" loading="lazy">
-            {{ end }}
-            <h2>{{ .Title }}</h2>
-            <div class="listing-meta">
-              <p>
-                <span class="status-badge status-{{ .Params.status | lower | replaceRE " " "-" }}">{{ .Params.status }}</span>
-              </p>
-              <p>
-                <strong>Prijs:</strong> €{{ .Params.price }}/maand
-              </p>
-              {{ with .Params.features }}
-                {{ if gt (len .) 0 }}
-                  <p><strong>Kenmerken:</strong> {{ delimit (first 3 .) ", " }}{{ if gt (len .) 3 }} en meer...{{ end }}</p>
-                {{ end }}
-              {{ end }}
-            </div>
-            <div style="margin-top: 1rem;">
-              <span class="btn-cta">Bekijk Details</span>
-            </div>
-          </a>
-        </article>
+        {{ partial "property-card.html" . }}
       {{ end }}
     </div>
   </div>

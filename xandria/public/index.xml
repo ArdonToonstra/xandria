@@ -57,5 +57,12 @@
       <guid>http://localhost:1313/contact/</guid>
       <description>&lt;p&gt;Voor vragen of opmerkingen kunt u contact met ons opnemen via &lt;a href=&#34;mailto:info@xandria.nl&#34;&gt;email&lt;/a&gt;.&#xA;U kunt ons ook bereiken via telefoonnummer: +31 20 123 4567.&#xA;Onze contacturen zijn van maandag tot en met vrijdag, van 9:00 tot 17:00.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Charmant Appartement</title>
+      <link>http://localhost:1313/te-huur/niet-beschikbaar-appartement/</link>
+      <pubDate>Sat, 01 Jun 2024 09:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/te-huur/niet-beschikbaar-appartement/</guid>
+      <description>&lt;p&gt;Dit charmante appartement is recent verhuurd en staat momenteel niet meer beschikbaar. Het heeft twee slaapkamers, een ruim balkon en ligt dicht bij openbaar vervoer.&lt;/p&gt;&#xA;&lt;p&gt;Belangrijke kenmerken:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;75 m² woonoppervlak&lt;/li&gt;&#xA;&lt;li&gt;2 slaapkamers&lt;/li&gt;&#xA;&lt;li&gt;Balkon&lt;/li&gt;&#xA;&lt;li&gt;Centrale ligging&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Neem contact op voor vergelijkbare woningen of toekomstige beschikbaarheid.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

@@ -34,77 +34,7 @@
         {{- end -}}
       {{- end -}}
       {{- range $selected }}
-        <div class="property-card" data-id="{{ with .File }}{{ .BaseFileName }}{{ else }}{{ .Title | urlize }}{{ end }}">
-          <div class="property-card-wrapper">
-            <div class="property-header">
-              <h3 class="property-title">{{ .Title }}</h3>
-              <div class="property-status">
-                <span class="status-badge status-{{ .Params.status | lower | replaceRE " " "-" }}">{{ .Params.status }}</span>
-              </div>
-            </div>
-            
-            {{ with .Params.images }}
-            <div class="property-image-container">
-              <div class="property-carousel">
-                {{ range . }}
-                  <div class="carousel-cell">
-                    <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
-                  </div>
-                {{ end }}
-              </div>
-              <div class="carousel-nav">
-                <button class="carousel-prev" type="button">&larr;</button>
-                <button class="carousel-next" type="button">&rarr;</button>
-              </div>
-            </div>
-            {{ end }}
-            
-            <div class="property-details">
-              <div class="property-price">€{{ .Params.price }}/maand</div>
-              
-              <div class="property-specs">
-                {{ with .Params.surface }}
-                <div class="spec-item">
-                  <span class="spec-icon">📐</span>
-                  <span class="spec-value">{{ . }}m²</span>
-                </div>
-                {{ end }}
-                
-                {{ with .Params.rooms }}
-                <div class="spec-item">
-                  <span class="spec-icon">🏠</span>
-                  <span class="spec-value">{{ . }} kamers</span>
-                </div>
-                {{ end }}
-                
-                {{ with .Params.bedrooms }}
-                <div class="spec-item">
-                  <span class="spec-icon">🛏️</span>
-                  <span class="spec-value">{{ . }} slaapkamers</span>
-                </div>
-                {{ end }}
-                
-                {{ if .Params.garden }}
-                <div class="spec-item">
-                  <span class="spec-icon">🌿</span>
-                  <span class="spec-value">Tuin</span>
-                </div>
-                {{ end }}
-                
-                {{ if .Params.balcony }}
-                <div class="spec-item">
-                  <span class="spec-icon">🏢</span>
-                  <span class="spec-value">Balkon</span>
-                </div>
-                {{ end }}
-              </div>
-              
-              <div class="property-action">
-                <a href="{{ .Permalink }}" class="btn-cta btn-small">Meer Info</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        {{ partial "property-card.html" . }}
       {{ end }}
     </div>
     

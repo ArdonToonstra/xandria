@@ -39,6 +39,9 @@
     <loc>http://localhost:1313/contact/</loc>
     <lastmod>2025-09-10T19:14:11+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/te-huur/niet-beschikbaar-appartement/</loc>
+    <lastmod>2024-06-01T09:00:00+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"

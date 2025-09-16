@@ -14,9 +14,26 @@
   <div class="container">
     <h2 class="section-title">Beschikbare Appartementen</h2>
     <div class="properties-grid">
-      {{ $teHuurPages := where .Site.Pages "Section" "te-huur" }}
-      {{ $propertyPages := where $teHuurPages "Kind" "page" }}
-      {{ range first 6 $propertyPages }}
+      {{- $teHuurPages := where .Site.Pages "Section" "te-huur" -}}
+      {{- $allPages := where $teHuurPages "Kind" "page" -}}
+      {{- $available := where $allPages "Params.status" "Beschikbaar" -}}
+      {{- $shuffledAvailable := shuffle $available -}}
+      {{- $selected := slice -}}
+      {{- range $i, $p := $shuffledAvailable }}
+        {{- if lt (len $selected) 3 }}
+          {{- $selected = $selected | append $p -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if lt (len $selected) 3 }}
+        {{- $remaining := where $allPages "Params.status" "ne" "Beschikbaar" -}}
+        {{- $shuffledRemaining := shuffle $remaining -}}
+        {{- range $i, $p := $shuffledRemaining }}
+          {{- if lt (len $selected) 3 }}
+            {{- $selected = $selected | append $p -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- range $selected }}
         <div class="property-card" data-id="{{ with .File }}{{ .BaseFileName }}{{ else }}{{ .Title | urlize }}{{ end }}">
           <div class="property-card-wrapper">
             <div class="property-header">

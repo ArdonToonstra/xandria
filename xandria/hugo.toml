@@ -1,4 +1,4 @@
-baseURL = 'http://xandria.be/'
+baseURL = 'https://xandria.be/'
 title = 'Xandria Huisvesting'
 theme = 'ananke'
 

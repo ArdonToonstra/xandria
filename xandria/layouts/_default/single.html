@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="flex-l mw8 center ph3 flex-wrap justify-between">
+  <header class="mt4 w-100">
+    <aside class="instapaper_ignoref b helvetica tracked ttu">
+      {{ .CurrentSection.Title }}
+    </aside>
+    <div id="sharing" class="mt3 ananke-socials"></div>
+    <h1 class="f1 athelas mt3 mb1">{{ .Title }}</h1>
+    
+    {{ if not .Date.IsZero }}
+    <time class="f6 mv4 dib tracked" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+      {{ .Date.Format "January 2, 2006" }}
+    </time>
+    {{ end }}
+  </header>
+  <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l">
+    {{ .Content }}
+    <ul class="pa0">
+      
+    </ul>
+  </div>
+</article>
+{{ end }}

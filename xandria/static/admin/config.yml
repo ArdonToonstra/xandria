@@ -20,17 +20,25 @@ collections:
   - name: "pages"
     label: "Pagina's"
     files:
-      - file: "content/acquisitie.md" # Decap zoekt zelf in /nl en /en
-        label: "Acquisitie Pagina"
-        name: "acquisitie"
-        i18n: true # Activeer meertaligheid voor dit bestand
+      - file: "content/contact.md" # Decap zoekt zelf in /nl en /en
+        label: "Contact Pagina"
+        name: "contact"
+        i18n: true
         fields:
           - { label: "Titel", name: "title", widget: "string", i18n: true }
           - { label: "Publicatiedatum", name: "date", widget: "datetime", i18n: "duplicate" }
           - { label: "Inhoud", name: "body", widget: "markdown", i18n: true }
-      - file: "content/contact.md"
-        label: "Contact Pagina"
-        name: "contact"
+      - file: "content/over-ons.md"
+        label: "Over Ons Pagina"
+        name: "over-ons"
+        i18n: true
+        fields:
+          - { label: "Titel", name: "title", widget: "string", i18n: true }
+          - { label: "Publicatiedatum", name: "date", widget: "datetime", i18n: "duplicate" }
+          - { label: "Inhoud", name: "body", widget: "markdown", i18n: true }
+      - file: "content/panden.md"
+        label: "Panden Pagina"
+        name: "panden"
         i18n: true
         fields:
           - { label: "Titel", name: "title", widget: "string", i18n: true }

@@ -434,7 +434,6 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 .site-logo {
   display: inline-block;
   vertical-align: middle;
-  padding-left: 25rem; /* Adjust this value as needed */
 }
 .site-logo img {
   height: 48px;
@@ -445,6 +444,9 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 @media (max-width: 768px) {
   .site-logo img {
     height: 40px;
+  }
+  .site-nav .site-nav-inner {
+    justify-content: space-between;
   }
 }
 
@@ -755,7 +757,7 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 
 @media screen and (min-width: 60em) {
   .site-logo {
-    padding-left: 20rem; /* Adjust this value as needed */
+    padding-left: 5rem; /* Adjust this value as needed */
   }
 }
 

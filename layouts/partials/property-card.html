@@ -16,9 +16,12 @@
     <div class="property-image-container{{ if $isUnavailable }} no-carousel{{ end }}">
       <div class="property-carousel">
         {{ range . }}
+          {{ $img := resources.Get . }}
+          {{ if $img }}
           <div class="carousel-cell">
-            <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy">
+            <img src="{{ $img.RelPermalink }}" alt="{{ $page.Title }}" loading="lazy">
           </div>
+          {{ end }}
         {{ end }}
       </div>
       {{ if not $isUnavailable }}

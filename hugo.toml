@@ -25,3 +25,5 @@ defaultContentLanguage = 'nl'
 [security]
   [security.funcs]
     getenv = ["^HUGO_", "^CI$", "CONTACT_FORM_SECRET"]
+
+staticDir = ["static", "themes/ananke/static"]

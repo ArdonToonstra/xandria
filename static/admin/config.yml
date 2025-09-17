@@ -1,0 +1,70 @@
+backend:
+  name: github
+  repo: ArdonToonstra/xandria # Your repo
+  branch: develop # The branch to update
+  base_url: https://api.github.com
+  site_domain: localhost:1313
+
+# This line should be commented out or set to false for production
+local_backend: true
+
+# Waar afbeeldingen opgeslagen worden
+media_folder: "static/images"
+public_folder: "/images"
+
+# Activeer meertaligheid
+i18n:
+  structure: multiple_folders
+  locales: [nl] # De talen die je ondersteunt
+
+collections:
+  # Collectie voor de hoofdpagina's (Contact, Acquisitie)
+  - name: "pages"
+    label: "Pagina's"
+    files:
+      - file: "content/nl/contact.md"
+        label: "Contact Pagina"
+        name: "contact"
+        i18n: false
+        fields:
+          - { label: "Titel", name: "title", widget: "string", i18n: false }
+          - { label: "Publicatiedatum", name: "date", widget: "datetime", i18n: "duplicate" }
+          - { label: "Inhoud", name: "body", widget: "markdown", i18n: false }
+      - file: "content/nl/over-ons.md"
+        label: "Over Ons Pagina"
+        name: "over-ons"
+        i18n: false
+        fields:
+          - { label: "Titel", name: "title", widget: "string", i18n: false }
+          - { label: "Publicatiedatum", name: "date", widget: "datetime", i18n: "duplicate" }
+          - { label: "Inhoud", name: "body", widget: "markdown", i18n: false }
+      - file: "content/nl/panden.md"
+        label: "Panden Pagina"
+        name: "panden"
+        i18n: false
+        fields:
+          - { label: "Titel", name: "title", widget: "string", i18n: false }
+          - { label: "Publicatiedatum", name: "date", widget: "datetime", i18n: "duplicate" }
+          - { label: "Inhoud", name: "body", widget: "markdown", i18n: false }
+
+  # Collectie voor het verhuuraanbod
+  - name: "te-huur"
+    label: "Te Huur"
+    folder: "content/nl/te-huur"
+    create: true
+    i18n: false
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string", i18n: false }
+      - { label: "Status", name: "status", widget: "select", options: ["Beschikbaar", "Verhuurd", "Binnenkort beschikbaar", "Niet beschikbaar"], i18n: false }
+      - { label: "Type", name: "type", widget: "select", options: ["Appartement", "Studio", "Garage"], i18n: false }
+      - { label: "Prijs (€/maand)", name: "price", widget: "number", i18n: false, required: false }
+      - { label: "Adres", name: "address", widget: "string", i18n: false, required: false }
+      - { label: "Oppervlakte (m²)", name: "surface", widget: "number", i18n: false, required: false }
+      - { label: "Aantal kamers", name: "rooms", widget: "number", i18n: false, required: false }
+      - { label: "Aantal slaapkamers", name: "bedrooms", widget: "number", i18n: false, required: false }
+      - { label: "Tuin", name: "garden", widget: "boolean", i18n: false, required: false }
+      - { label: "Balkon", name: "balcony", widget: "boolean", i18n: false, required: false }
+      - { label: "Afbeeldingen", name: "images", widget: "image", media_library: { config: { multiple: true } }, i18n: false }
+      - { label: "Kenmerken", name: "features", widget: "list", i18n: false, required: false, field: { label: "Kenmerk", name: "feature", widget: "string" } }
+      - { label: "Beschrijving", name: "body", widget: "markdown", i18n: false }

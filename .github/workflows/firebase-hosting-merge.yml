@@ -19,6 +19,8 @@ jobs:
           hugo-version: '0.150.0'
           extended: true
       - name: Build site
+        env:
+          CONTACT_FORM_SECRET: ${{ secrets.CONTACT_FORM_SECRET }}
         run: hugo
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

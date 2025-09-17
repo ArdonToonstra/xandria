@@ -7,7 +7,7 @@ backend:
   # Optional: restrict OAuth scopes (default includes repo access). Uncomment to set explicitly:
   # auth_scope: repo
   # Add your GitHub OAuth App client id here after creating it (see README steps below)
-  # client_id: "<GITHUB_OAUTH_CLIENT_ID>"
+  client_id: "Ov23li0b4G13A4Xzo1Lg"
 
   # If you prefer CMS to create pull requests instead of committing directly,
   # uncomment and set the following:

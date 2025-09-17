@@ -1,11 +1,8 @@
 baseURL = 'https://xandria-bv.web.app/'
 title = 'Xandria Huisvesting'
-theme = "ananke"
+theme = 'ananke'
+staticDir = ["static", "themes/ananke/static"]
 
-[module]
-  [[module.imports]]
-    path = "ananke"
-    
 defaultContentLanguage = 'nl'
 
 [params]

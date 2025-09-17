@@ -1,12 +1,20 @@
 backend:
   name: github
   repo: ArdonToonstra/xandria # Your repo
-  branch: develop # The branch to update
+  branch: main # The branch to update
   base_url: https://api.github.com
-  site_domain: localhost:1313
+  site_domain: xandria-bv.web.app
+  # Optional: restrict OAuth scopes (default includes repo access). Uncomment to set explicitly:
+  # auth_scope: repo
+  # Add your GitHub OAuth App client id here after creating it (see README steps below)
+  # client_id: "<GITHUB_OAUTH_CLIENT_ID>"
 
-# This line should be commented out or set to false for production
-local_backend: true
+  # If you prefer CMS to create pull requests instead of committing directly,
+  # uncomment and set the following:
+  # commit_mode: pull_request
+
+# For production, disable the local backend. Local backend is for local testing only.
+local_backend: false
 
 # Waar afbeeldingen opgeslagen worden
 media_folder: "static/images"

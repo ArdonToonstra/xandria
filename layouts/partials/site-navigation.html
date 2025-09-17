@@ -2,10 +2,7 @@
   <div class="container flex-l center items-center justify-between site-nav-inner">
     <a href="{{ .Site.Home.RelPermalink }}" class="site-logo no-underline">
       {{ with .Site.Params.site_logo }}
-        {{ $logo := resources.Get . }}
-        {{ if $logo }}
-          <img src="{{ $logo.RelPermalink }}" alt="{{ $.Site.Title }} logo" />
-        {{ end }}
+        <img src="{{ . | relURL }}" alt="{{ $.Site.Title }} logo" />
       {{ else }}
         {{ .Site.Title }}
       {{ end }}

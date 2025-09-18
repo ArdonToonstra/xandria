@@ -1,11 +1,30 @@
 {{ define "main" }}
   <div class="homepage-content">
     <h1 class="page-title">Beschikbare panden</h1>
+
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-status="all">Alles</button>
+      <button class="filter-btn" data-status="Beschikbaar">Beschikbaar</button>
+      <button class="filter-btn" data-status="Binnenkort beschikbaar">Binnenkort beschikbaar</button>
+      <button class="filter-btn" data-status="Verhuurd">Verhuurd</button>
+    </div>
+
     <div class="listing-summary">
-      {{ range .Pages }}
+      {{ $beschikbaar := where .Pages "Params.status" "Beschikbaar" }}
+      {{ $binnenkort := where .Pages "Params.status" "Binnenkort beschikbaar" }}
+      {{ $verhuurd := where .Pages "Params.status" "Verhuurd" }}
+
+      {{ range $beschikbaar }}
+        {{ partial "property-card.html" . }}
+      {{ end }}
+      {{ range $binnenkort }}
+        {{ partial "property-card.html" . }}
+      {{ end }}
+      {{ range $verhuurd }}
         {{ partial "property-card.html" . }}
       {{ end }}
     </div>
   </div>
   {{ partial "carousel-scripts.html" . }}
+  <script src="{{ "/js/filter.js" | relURL }}"></script>
 {{ end }}

@@ -3,7 +3,11 @@
 */}}
 {{- $page := . -}}
 {{- $isUnavailable := eq $page.Params.status "Verhuurd" -}}
-<div class="property-card" data-id="{{ with $page.File }}{{ .BaseFileName }}{{ else }}{{ $page.Title | urlize }}{{ end }}">
+{{/* expose numeric values as data attributes for client-side sorting */}}
+{{ $price := cond (isset $page.Params "price") $page.Params.price 0 }}
+{{ $surface := cond (isset $page.Params "surface") $page.Params.surface 0 }}
+{{ $rooms := cond (isset $page.Params "rooms") $page.Params.rooms 0 }}
+<div class="property-card" data-id="{{ with $page.File }}{{ .BaseFileName }}{{ else }}{{ $page.Title | urlize }}{{ end }}" data-price="{{ $price }}" data-surface="{{ $surface }}" data-rooms="{{ $rooms }}">
   <div class="property-card-wrapper">
     <div class="property-header">
       <h3 class="property-title">{{ $page.Title }}</h3>

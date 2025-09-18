@@ -1,25 +1,24 @@
-+++
-date = '2025-09-10T19:24:18+02:00'
-draft = false
-title = 'Luxe Studio Engelselei'
-status = 'Beschikbaar'
-type = 'Studio'
-price = 875
-surface = 55
-rooms = 2
-bedrooms = 1
-bathrooms = 1
-garden = false
-balcony = true
-parking = false
-furnished = true
-pets_allowed = false
-smoking_allowed = false
-images = [
-  '/images/listings/tweede-appartement/1.jpg',
-  '/images/listings/tweede-appartement/2.jpg'
+---
+date: 2025-09-10T19:24:18+02:00
+draft: false
+title: Luxe Studio Engelselei
+status: Beschikbaar
+price: 875
+surface: 55
+rooms: 2
+bedrooms: 1
+bathrooms: 1
+garden: false
+balcony: true
+parking: false
+furnished: true
+pets_allowed: false
+smoking_allowed: false
+images: [
+  /images/listings/tweede-appartement/1.jpg,
+  /images/listings/tweede-appartement/2.jpg
 ]
-features = [
+features: [
   'Volledig gemeubileerd',
   'Airconditioning',
   'Energielabel B',
@@ -27,13 +26,13 @@ features = [
   'Smart TV inbegrepen',
   'Moderne badkamer'
 ]
-address = 'Engelselei 4, 2000 Antwerpen'
-neighborhood = 'Zuid'
-available_from = '2025-09-15'
-lease_duration = 'Kort- en langetermijn mogelijk'
-deposit = 1750
-utilities_included = true
-+++
+address: Engelselei 4, 2000 Antwerpen
+neighborhood: Zuid
+available_from: 2025-09-15
+lease_duration: Kort- en langetermijn mogelijk
+deposit: 1750
+utilities_included: true
+---
 
 Deze stijlvolle volledig gemeubileerde studio ligt in de trendy wijk Antwerpen-Zuid, bekend om zijn artistieke flair en uitstekende restaurants.
 

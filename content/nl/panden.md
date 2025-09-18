@@ -1,8 +1,8 @@
-+++
-date = '2025-09-16T10:05:00+02:00'
-draft = false
-title = 'Panden'
-+++
+---
+date: 2025-09-16T10:05:00+02:00
+draft: false
+title: Panden Gezocht
+---
 
 Wij zijn vooral geïnteresseerd in de aankoop van de volgende types panden in Antwerpen en nabije omgeving:
 

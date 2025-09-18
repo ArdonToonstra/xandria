@@ -1,7 +1,7 @@
 ---
 title: Garagebox
 status: Beschikbaar
-type: Appartement
+property_type: Garage
 price: 130
 address: Grijpegemplein 16, 2650 Edegem
 surface: ""

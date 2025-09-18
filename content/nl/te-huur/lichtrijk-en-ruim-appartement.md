@@ -1,5 +1,5 @@
 ---
-title: "Lichtrijk en ruim appartement "
+title: Lichtrijk en ruim appartement
 status: Verhuurd
 type: Appartement
 price: 900

@@ -3,7 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: false
 status: "Beschikbaar"
-type: "Appartement"
+property_type: "Appartement"
 price: 950
 surface: 85
 rooms: 3

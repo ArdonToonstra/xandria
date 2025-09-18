@@ -1,44 +1,62 @@
 {{ define "main" }}
-  <article class="listing-detail" style="max-width: 1000px; margin: 0 auto; padding: 2rem;">
+  <article class="listing-detail" style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
     <h1 style="font-family: 'Bree Serif', serif; color: var(--xandria-primary, #1800ad); font-size: 2.5rem; margin-bottom: 1rem;">{{ .Title }}</h1>
     
-    <div class="listing-meta" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
-      <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-        <span class="status-badge status-{{ .Params.status | lower | replaceRE " " "-" }}">{{ .Params.status }}</span>
-      </p>
-      <p style="font-size: 1.25rem; font-weight: 600; color: #1800ad; margin: 0;">
-        <strong>Prijs:</strong> €{{ .Params.price }}/maand
-      </p>
-    </div>
-
-    <div class="gallery">
-      {{ range .Params.images }}
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" />
-      {{ end }}
-    </div>
-
-    <div class="content" style="margin: 2rem 0;">
-      <h2 style="font-family: 'Montserrat', sans-serif; color: #1800ad; border-bottom: 2px solid #99c5ff; padding-bottom: 0.5rem;">Beschrijving</h2>
-      <div style="font-family: 'Open Sans', sans-serif; line-height: 1.6; font-size: 1.1rem;">
-        {{ .Content }}
-      </div>
-    </div>
-
-    {{ with .Params.features }}
-      <div class="features" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-top: 2rem;">
-        <h3 style="font-family: 'Montserrat', sans-serif; color: #1800ad; margin-bottom: 1rem;">Kenmerken</h3>
-        <ul>
-          {{ range . }}
-            <li>{{ . }}</li>
+    <div class="listing-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
+      
+      <div class="listing-main">
+        {{ if .Params.images }}
+        <div class="gallery property-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false, "wrapAround": true }'>
+          {{ range .Params.images }}
+            <div class="carousel-cell" style="width: 100%;">
+              <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" style="width: 100%; height: auto; border-radius: 8px;" />
+            </div>
           {{ end }}
-        </ul>
+        </div>
+        {{ end }}
+
+        <div class="content" style="margin-top: 2rem;">
+          <h2 style="font-family: 'Montserrat', sans-serif; color: #1800ad; border-bottom: 2px solid #99c5ff; padding-bottom: 0.5rem;">Beschrijving</h2>
+          <div style="font-family: 'Open Sans', sans-serif; line-height: 1.6; font-size: 1.1rem;">
+            {{ .Content }}
+          </div>
+        </div>
       </div>
-    {{ end }}
+
+      <aside class="listing-sidebar" style="position: sticky; top: 2rem;">
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+          <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+            <span class="status-badge status-{{ .Params.status | lower | replaceRE " " "-" }}">{{ .Params.status }}</span>
+          </p>
+          <p style="font-size: 1.25rem; font-weight: 600; color: #1800ad; margin: 0;">
+            <strong>Prijs:</strong> €{{ .Params.price }}/maand
+          </p>
+        </div>
+
+        {{ with .Params.features }}
+          <div class="features" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+            <h3 style="font-family: 'Montserrat', sans-serif; color: #1800ad; margin-bottom: 1rem;">Kenmerken</h3>
+            <ul style="list-style: none; padding-left: 0;">
+              {{ range . }}
+                <li style="margin-bottom: 0.5rem; display: flex; align-items: center;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16" style="color: #1800ad; margin-right: 8px; flex-shrink: 0;"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+                  {{ . }}
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+
+        <div style="text-align: center;">
+          <a href="mailto:info@xandria.be?subject=Interesse in {{ .Title }}" class="btn-cta" style="display: block; width: 100%; margin-bottom: 1rem;">Contact Opnemen</a>
+        </div>
+      </aside>
+    </div>
 
     <div style="text-align: center; margin-top: 3rem;">
-      <a href="mailto:info@xandria.be?subject=Interesse in {{ .Title }}" class="btn-cta" style="margin-right: 1rem;">Contact Opnemen</a>
-      <a href="{{ "/aanbod" | relURL }}" class="btn-secondary">Terug naar Overzicht</a>
+      <a href="{{ "/te-huur" | relURL }}" class="btn-secondary">Terug naar Overzicht</a>
     </div>
 
   </article>
+  {{ partial "carousel-scripts.html" . }}
 {{ end }}

@@ -64,7 +64,7 @@ collections:
     fields:
       - { label: "Titel", name: "title", widget: "string", i18n: false }
       - { label: "Status", name: "status", widget: "select", options: ["Beschikbaar", "Verhuurd", "Binnenkort beschikbaar", "Niet beschikbaar"], i18n: false }
-      - { label: "Type", name: "type", widget: "select", options: ["Appartement", "Studio", "Garage"], i18n: false }
+      - { label: "Type", name: "property_type", widget: "select", options: ["Appartement", "Huis", "Kantoor", "Garage", "Overig"], i18n: false, required: true }
       - { label: "Prijs (€/maand)", name: "price", widget: "number", i18n: false, required: false }
       - { label: "Adres", name: "address", widget: "string", i18n: false, required: false }
       - { label: "Oppervlakte (m²)", name: "surface", widget: "number", i18n: false, required: false }

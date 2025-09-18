@@ -2,7 +2,7 @@
    Expects the current context `.` to be a page representing a listing
 */}}
 {{- $page := . -}}
-{{- $isUnavailable := eq $page.Params.status "Niet beschikbaar" -}}
+{{- $isUnavailable := eq $page.Params.status "Verhuurd" -}}
 <div class="property-card" data-id="{{ with $page.File }}{{ .BaseFileName }}{{ else }}{{ $page.Title | urlize }}{{ end }}">
   <div class="property-card-wrapper">
     <div class="property-header">

@@ -2,6 +2,7 @@
 date: 2025-09-10T20:00:00+02:00
 draft: false
 title: Penthouse met Dakterras
+property_type: Appartement
 status: Binnenkort beschikbaar
 price: 1850
 surface: 140

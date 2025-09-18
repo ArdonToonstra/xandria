@@ -2,6 +2,7 @@
 date: 2025-09-10T19:24:18+02:00
 draft: false
 title: Luxe Studio Engelselei
+property_type: Appartement
 status: Beschikbaar
 price: 875
 surface: 55

@@ -1,7 +1,8 @@
 ---
 title: Charmant Appartement
 date: 2024-06-01T09:00:00+02:00
-status: Niet beschikbaar
+status: Verhuurd
+property_type: Appartement
 price: 1200
 images:
   - /images/listings/eerste-appartement/1.jpg

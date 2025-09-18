@@ -540,6 +540,47 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   .site-nav .site-logo img { height: 44px; }
 }
 
+/* Mobile Navigation */
+.site-nav__toggle {
+  display: none; /* Hidden by default */
+}
+
+@media screen and (max-width: 60em) { /* Matches tachyons -l breakpoint */
+  .site-nav__toggle {
+    display: block; /* Show hamburger on small screens */
+  }
+
+  .site-nav__menu {
+    display: none; /* Hide menu by default on small screens */
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .site-nav.site-menu--open .site-nav__menu {
+    display: block; /* Show menu when toggled */
+  }
+
+  .site-menu li {
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .site-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .site-menu a {
+    display: block;
+    padding: 1rem;
+  }
+}
+
 /* Hamburger button */
 .site-nav__toggle {
   display: none;

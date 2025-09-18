@@ -9,6 +9,7 @@ defaultContentLanguage = 'nl'
   # Set this to your deployed Apps Script web app URL (or override per-shortcode)
   contactScriptURL = "https://script.google.com/macros/s/AKfycbw_YZFncG9G4tmUNkW_xlorfNn8lbaVjst7dFfgpVw6hw30j_7hRvcbCeJIOxH7OMFO/exec"
   # The secret is now read from the CONTACT_FORM_SECRET environment variable during build.
+  googleMapsApiKey = ""
 
 [languages]
   [languages.nl]
@@ -24,4 +25,4 @@ defaultContentLanguage = 'nl'
 
 [security]
   [security.funcs]
-    getenv = ["^HUGO_", "^CI$", "CONTACT_FORM_SECRET"]
+    getenv = ["^HUGO_", "^CI$", "CONTACT_FORM_SECRET", "HUGO_PARAMS_GOOGLEMAPSAPIKEY"]

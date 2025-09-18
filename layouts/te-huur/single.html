@@ -55,6 +55,19 @@
         <div style="text-align: center;">
           <a href="{{ "/contact" | relURL }}" class="btn-cta" style="display: block; width: 100%; margin-bottom: 1rem;">Contact Opnemen</a>
         </div>
+
+        {{ if .Params.address }}
+        <div class="map-container" style="margin-top: 2rem;">
+          <iframe
+            width="100%"
+            height="250"
+            style="border:0; border-radius: 12px;"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed/v1/place?key={{ site.Params.googleMapsApiKey }}&q={{ .Params.address | urlquery }}">
+          </iframe>
+        </div>
+        {{ end }}
       </aside>
     </div>
 

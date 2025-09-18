@@ -29,7 +29,7 @@ features: [
   'Private lift',
   'Concierge service'
 ]
-address: Keizerstraat 88, 2000 Antwerpen
+address: Kerkstraat 1, 9000 Gent, België
 neighborhood: Centrum
 available_from: 2025-12-01
 lease_duration: Langetermijn

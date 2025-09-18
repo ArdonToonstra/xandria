@@ -1,44 +1,110 @@
 {{ define "main" }}
-  <article class="listing-detail" style="max-width: 1000px; margin: 0 auto; padding: 2rem;">
+  <article class="listing-detail" style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
     <h1 style="font-family: 'Bree Serif', serif; color: var(--xandria-primary, #1800ad); font-size: 2.5rem; margin-bottom: 1rem;">{{ .Title }}</h1>
     
-    <div class="listing-meta" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
-      <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-        <span class="status-badge status-{{ .Params.status | lower | replaceRE " " "-" }}">{{ .Params.status }}</span>
-      </p>
-      <p style="font-size: 1.25rem; font-weight: 600; color: #1800ad; margin: 0;">
-        <strong>Prijs:</strong> €{{ .Params.price }}/maand
-      </p>
-    </div>
+    <div class="listing-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
+      
+      <div class="listing-main">
+        {{ if .Params.images }}
+        <div class="property-image-container">
+          <div class="property-carousel">
+            {{ range .Params.images }}
+              <div class="carousel-cell">
+                <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" style="border-radius: 8px; cursor: pointer;" />
+              </div>
+            {{ end }}
+          </div>
+          <div class="carousel-nav">
+            <button class="carousel-prev" aria-label="Vorige">‹</button>
+            <button class="carousel-next" aria-label="Volgende">›</button>
+          </div>
+        </div>
+        {{ end }}
 
-    <div class="gallery">
-      {{ range .Params.images }}
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" />
-      {{ end }}
-    </div>
-
-    <div class="content" style="margin: 2rem 0;">
-      <h2 style="font-family: 'Montserrat', sans-serif; color: #1800ad; border-bottom: 2px solid #99c5ff; padding-bottom: 0.5rem;">Beschrijving</h2>
-      <div style="font-family: 'Open Sans', sans-serif; line-height: 1.6; font-size: 1.1rem;">
-        {{ .Content }}
+        <div class="content" style="margin-top: 2rem;">
+          <h2 style="font-family: 'Montserrat', sans-serif; color: #1800ad; border-bottom: 2px solid #99c5ff; padding-bottom: 0.5rem;">Beschrijving</h2>
+          <div style="font-family: 'Open Sans', sans-serif; line-height: 1.6; font-size: 1.1rem;">
+            {{ .Content }}
+          </div>
+        </div>
       </div>
-    </div>
 
-    {{ with .Params.features }}
-      <div class="features" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-top: 2rem;">
-        <h3 style="font-family: 'Montserrat', sans-serif; color: #1800ad; margin-bottom: 1rem;">Kenmerken</h3>
-        <ul>
-          {{ range . }}
-            <li>{{ . }}</li>
+      <aside class="listing-sidebar" style="position: sticky; top: 2rem;">
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+          <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+            <span class="status-badge status-{{ .Params.status | lower | replaceRE " " "-" }}">{{ .Params.status }}</span>
+          </p>
+          <p style="font-size: 1.25rem; font-weight: 600; color: #1800ad; margin: 0;">
+            <strong>Prijs:</strong> €{{ .Params.price }}/maand
+          </p>
+          {{ with .Params.vaste_kosten }}
+          <p style="font-size: 1rem; margin-top: 0.5rem;">
+            <strong>Vaste kosten:</strong> €{{ . }}/maand
+          </p>
           {{ end }}
-        </ul>
-      </div>
-    {{ end }}
+          {{ with .Params.beschikbaar_vanaf }}
+          <p style="font-size: 1rem; margin-top: 0.5rem;">
+            <strong>Beschikbaar vanaf:</strong> {{ . | time.Format ":date_long" }}
+          </p>
+          {{ end }}
+        </div>
+
+        {{ with .Params.features }}
+          <div class="features" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+            <h3 style="font-family: 'Montserrat', sans-serif; color: #1800ad; margin-bottom: 1rem;">Kenmerken</h3>
+            <ul style="list-style: none; padding-left: 0;">
+              {{ range . }}
+                <li style="margin-bottom: 0.5rem; display: flex; align-items: center;">
+                  {{ . }}
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+
+        {{ if or .Params.epc .Params.staat .Params.beglazing .Params.verwarming .Params.water .Params.mobiscore .Params.keuken .Params.badkamer .Params.parkeerplaats .Params.lift .Params.verdieping .Params.huisdieren }}
+        <div class="details" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+          <h3 style="font-family: 'Montserrat', sans-serif; color: #1800ad; margin-bottom: 1rem;">Details</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            {{ with .Params.epc }}<li style="margin-bottom: 0.5rem;"><strong>EPC:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.staat }}<li style="margin-bottom: 0.5rem;"><strong>Staat:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.beglazing }}<li style="margin-bottom: 0.5rem;"><strong>Beglazing:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.verwarming }}<li style="margin-bottom: 0.5rem;"><strong>Verwarming:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.water }}<li style="margin-bottom: 0.5rem;"><strong>Water:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.mobiscore }}<li style="margin-bottom: 0.5rem;"><strong>Mobiscore:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.keuken }}<li style="margin-bottom: 0.5rem;"><strong>Keuken:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.badkamer }}<li style="margin-bottom: 0.5rem;"><strong>Badkamer:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.parkeerplaats }}<li style="margin-bottom: 0.5rem;"><strong>Parkeerplaats:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.lift }}<li style="margin-bottom: 0.5rem;"><strong>Lift:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.verdieping }}<li style="margin-bottom: 0.5rem;"><strong>Verdieping:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.huisdieren }}<li style="margin-bottom: 0.5rem;"><strong>Huisdieren:</strong> {{ . }}</li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        <div style="text-align: center;">
+          <a href="{{ "/contact" | relURL }}" class="btn-cta" style="display: block; width: 100%; margin-bottom: 1rem;">Contact Opnemen</a>
+        </div>
+
+        {{ if .Params.address }}
+        <div class="map-container" style="margin-top: 2rem;">
+          <iframe
+            width="100%"
+            height="250"
+            style="border:0; border-radius: 12px;"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed/v1/place?key={{ site.Params.googleMapsApiKey }}&q={{ .Params.address | urlquery }}">
+          </iframe>
+        </div>
+        {{ end }}
+      </aside>
+    </div>
 
     <div style="text-align: center; margin-top: 3rem;">
-      <a href="mailto:info@xandria.be?subject=Interesse in {{ .Title }}" class="btn-cta" style="margin-right: 1rem;">Contact Opnemen</a>
-      <a href="{{ "/aanbod" | relURL }}" class="btn-secondary">Terug naar Overzicht</a>
+      <a href="{{ "/te-huur" | relURL }}" class="btn-secondary">Terug naar Overzicht</a>
     </div>
 
   </article>
+  {{ partial "carousel-scripts.html" . }}
 {{ end }}

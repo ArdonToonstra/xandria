@@ -144,7 +144,6 @@ h1, .f2, .f-subheadline-l {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-}t;
 }
 
 h2, .f3, .f4 {
@@ -228,6 +227,13 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes content to top and bottom */
+  border: 1px solid var(--xandria-gray-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
 .property-card:hover {
@@ -235,8 +241,15 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   box-shadow: 0 12px 40px rgba(24, 0, 173, 0.15);
 }
 
+.property-card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
 .property-card-wrapper {
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .property-header {
@@ -259,18 +272,26 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 /* Image Carousel */
 .property-image-container {
   position: relative;
-  aspect-ratio: 4/3;
+  /* Use a fixed height for better compatibility with Flickity */
+  height: 280px;
+  width: 100%;
   overflow: hidden;
+  line-height: 0;
+  background: #f5f5f5;
 }
 
 .property-carousel {
   width: 100%;
   height: 100%;
+  line-height: 0;
 }
 
 .carousel-cell {
   width: 100%;
-  height: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-cell img {
@@ -278,6 +299,30 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.2s ease;
+}
+
+.carousel-cell img:hover {
+  transform: scale(1.02);
+}
+
+/* Fallback for browsers with limited aspect-ratio support */
+.property-image-container img {
+  display: block;
+}
+
+/* Lightbox overlay styles */
+.xandria-lightbox-overlay img {
+  transition: transform 0.18s ease;
+}
+
+/* Ensure nav buttons are visible on small screens */
+@media (max-width: 640px) {
+  .carousel-prev, .carousel-next {
+    opacity: 1;
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .carousel-nav {
@@ -290,10 +335,11 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   justify-content: space-between;
   padding: 0 1rem;
   pointer-events: none;
+  z-index: 5;
 }
 
 .carousel-prev, .carousel-next {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -305,14 +351,15 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--xandria-primary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.18s ease;
   pointer-events: auto;
   opacity: 0;
 }
 
-.property-card:hover .carousel-prev,
-.property-card:hover .carousel-next {
+/* Show nav when hovering the image container */
+.property-image-container:hover .carousel-prev,
+.property-image-container:hover .carousel-next {
   opacity: 1;
 }
 
@@ -325,6 +372,7 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 /* Property Details */
 .property-details {
   padding: 1.5rem;
+  flex-grow: 1; /* Allows this section to grow and fill available space */
 }
 
 .property-price {
@@ -333,6 +381,7 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   font-weight: 700;
   color: var(--xandria-primary);
   margin-bottom: 1rem;
+  padding: 0 1rem 1rem;
 }
 
 .property-specs {
@@ -489,6 +538,47 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 @media (max-width: 768px) {
   .site-nav .site-menu { display: none; }
   .site-nav .site-logo img { height: 44px; }
+}
+
+/* Mobile Navigation */
+.site-nav__toggle {
+  display: none; /* Hidden by default */
+}
+
+@media screen and (max-width: 60em) { /* Matches tachyons -l breakpoint */
+  .site-nav__toggle {
+    display: block; /* Show hamburger on small screens */
+  }
+
+  .site-nav__menu {
+    display: none; /* Hide menu by default on small screens */
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .site-nav.site-menu--open .site-nav__menu {
+    display: block; /* Show menu when toggled */
+  }
+
+  .site-menu li {
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .site-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .site-menu a {
+    display: block;
+    padding: 1rem;
+  }
 }
 
 /* Hamburger button */
@@ -690,8 +780,9 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 /* Listing Summary Grid */
 .listing-summary {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch; /* Make cards in a row have the same height */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -878,4 +969,32 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
     background-color: #fff3cd;
     color: #856404;
     display: block;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  color: #333;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.filter-btn.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
 }

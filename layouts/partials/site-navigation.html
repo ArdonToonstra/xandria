@@ -1,5 +1,5 @@
 <nav id="site-nav" class="site-nav pv2 ph3 ph4-ns" role="navigation">
-  <div class="container flex-l center items-center justify-between site-nav-inner">
+  <div class="container flex center items-center justify-between site-nav-inner">
     <a href="{{ .Site.Home.RelPermalink }}" class="site-logo no-underline">
       {{ with .Site.Params.site_logo }}
         <img src="{{ . | relURL }}" alt="{{ $.Site.Title }} logo" />
@@ -8,16 +8,16 @@
       {{ end }}
     </a>
 
-    <button id="nav-toggle" class="site-nav__toggle" aria-label="Menu" aria-expanded="false">
+    <button id="nav-toggle" class="site-nav__toggle dn-l" aria-label="Menu" aria-expanded="false">
       <span class="hamburger" aria-hidden="true"></span>
     </button>
 
-    <div class="flex-l items-center">
+    <div class="site-nav__menu dn db-l">
       <ul class="pl0 mr3 site-menu" role="menu">
-        <li class="list f5 f4-ns fw4 dib pr3" role="none"><a role="menuitem" class="no-underline" href="{{ "/over-ons" | relURL }}">Over Ons</a></li>
-        <li class="list f5 f4-ns fw4 dib pr3" role="none"><a role="menuitem" class="no-underline" href="{{ "/te-huur" | relURL }}">Te huur</a></li>
-        <li class="list f5 f4-ns fw4 dib pr3" role="none"><a role="menuitem" class="no-underline" href="{{ "/panden" | relURL }}">Panden</a></li>
-        <li class="list f5 f4-ns fw4 dib pr3" role="none"><a role="menuitem" class="no-underline" href="{{ "/contact" | relURL }}">Contact</a></li>
+        <li class="list f5 f4-ns fw4 dib-l db pv2" role="none"><a role="menuitem" class="no-underline" href="{{ "/over-ons" | relURL }}">Over Ons</a></li>
+        <li class="list f5 f4-ns fw4 dib-l db pv2" role="none"><a role="menuitem" class="no-underline" href="{{ "/te-huur" | relURL }}">Te huur</a></li>
+        <li class="list f5 f4-ns fw4 dib-l db pv2" role="none"><a role="menuitem" class="no-underline" href="{{ "/panden" | relURL }}">Panden</a></li>
+        <li class="list f5 f4-ns fw4 dib-l db pv2" role="none"><a role="menuitem" class="no-underline" href="{{ "/contact" | relURL }}">Contact</a></li>
       </ul>
     </div>
   </div>

@@ -1,26 +1,26 @@
-+++
-date = '2025-09-10T20:00:00+02:00'
-draft = false
-title = 'Penthouse met Dakterras'
-status = 'Binnenkort beschikbaar'
-type = 'Penthouse'
-price = 1850
-surface = 140
-rooms = 4
-bedrooms = 2
-bathrooms = 2
-garden = false
-balcony = false
-terrace = true
-parking = true
-furnished = false
-pets_allowed = false
-smoking_allowed = false
-images = [
-  '/images/listings/penthouse/1.jpg',
-  '/images/listings/penthouse/2.jpg'
+---
+date: 2025-09-10T20:00:00+02:00
+draft: false
+title: Penthouse met Dakterras
+property_type: Appartement
+status: Binnenkort beschikbaar
+price: 1850
+surface: 140
+rooms: 4
+bedrooms: 2
+bathrooms: 2
+garden: false
+balcony: false
+terrace: true
+parking: true
+furnished: false
+pets_allowed: false
+smoking_allowed: false
+images: [
+  /images/listings/penthouse/1.jpg,
+  /images/listings/penthouse/2.jpg
 ]
-features = [
+features: [
   'Dakterras van 60m²',
   'Panoramisch uitzicht',
   'Designer interieur',
@@ -29,13 +29,13 @@ features = [
   'Private lift',
   'Concierge service'
 ]
-address = 'Keizerstraat 88, 2000 Antwerpen'
-neighborhood = 'Centrum'
-available_from = '2025-12-01'
-lease_duration = 'Langetermijn'
-deposit = 3700
-utilities_included = false
-+++
+address: Kerkstraat 1, 9000 Gent, België
+neighborhood: Centrum
+available_from: 2025-12-01
+lease_duration: Langetermijn
+deposit: 3700
+utilities_included: false
+---
 
 Exclusieve penthouse op de 8e verdieping met spectaculair dakterras en panoramisch uitzicht over Antwerpen. Dit unieke appartement biedt luxe wonen op topniveau in het hart van de stad.
 

@@ -2,8 +2,12 @@
    Expects the current context `.` to be a page representing a listing
 */}}
 {{- $page := . -}}
-{{- $isUnavailable := eq $page.Params.status "Niet beschikbaar" -}}
-<div class="property-card" data-id="{{ with $page.File }}{{ .BaseFileName }}{{ else }}{{ $page.Title | urlize }}{{ end }}">
+{{- $isUnavailable := eq $page.Params.status "Verhuurd" -}}
+{{/* expose numeric values as data attributes for client-side sorting */}}
+{{ $price := cond (isset $page.Params "price") $page.Params.price 0 }}
+{{ $surface := cond (isset $page.Params "surface") $page.Params.surface 0 }}
+{{ $rooms := cond (isset $page.Params "rooms") $page.Params.rooms 0 }}
+<div class="property-card" data-id="{{ with $page.File }}{{ .BaseFileName }}{{ else }}{{ $page.Title | urlize }}{{ end }}" data-price="{{ $price }}" data-surface="{{ $surface }}" data-rooms="{{ $rooms }}">
   <div class="property-card-wrapper">
     <div class="property-header">
       <h3 class="property-title">{{ $page.Title }}</h3>
@@ -17,7 +21,7 @@
       <div class="property-carousel">
         {{ range . }}
           <div class="carousel-cell">
-            <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy">
+            <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy" style="cursor: pointer;">
           </div>
         {{ end }}
       </div>

@@ -4,21 +4,136 @@
 <!-- Flickity JS -->
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
+<!-- Lightbox CSS -->
+<style>
+.xandria-lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.xandria-lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.xandria-lightbox-carousel {
+  width: 100%;
+  max-height: 80vh;
+  position: relative;
+}
+
+.xandria-lightbox-cell {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xandria-lightbox-cell img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+.xandria-lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xandria-lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.xandria-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xandria-lightbox-nav:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.xandria-lightbox-prev {
+  left: 15px;
+}
+
+.xandria-lightbox-next {
+  right: 15px;
+}
+
+.xandria-lightbox-info {
+  padding: 15px;
+  background: white;
+  text-align: center;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+}
+</style>
+
 <!-- Custom Carousel JS -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Regular carousel initialization
   var carousels = document.querySelectorAll('.property-carousel');
-  carousels.forEach(function(carousel) {
+  var flickityInstances = new Map();
+  
+  carousels.forEach(function(carousel, index) {
     // Skip carousels that are explicitly marked as non-carousel (unavailable listings)
     if (carousel.closest('.property-image-container') && carousel.closest('.property-image-container').classList.contains('no-carousel')) {
       return;
     }
+    
     var flickity = new Flickity(carousel, {
       cellAlign: 'left',
       contain: true,
       pageDots: false,
-      prevNextButtons: false
+      prevNextButtons: false,
+      adaptiveHeight: true
     });
+
+    // Store the flickity instance for later reference
+    flickityInstances.set(carousel, flickity);
 
     var nav = carousel.closest('.property-image-container').querySelector('.carousel-nav');
     if (nav) {
@@ -37,6 +152,98 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     }
+
+    // Add click handlers for lightbox functionality
+    carousel.addEventListener('click', function(e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+        openLightbox(carousel, flickity.selectedIndex);
+      }
+    });
   });
+
+  // Lightbox functionality
+  function openLightbox(carousel, initialIndex) {
+    var images = carousel.querySelectorAll('img');
+    if (images.length === 0) return;
+
+    // Create lightbox HTML
+    var lightboxHtml = `
+      <div class="xandria-lightbox-overlay" id="xandria-lightbox">
+        <div class="xandria-lightbox-content">
+          <button class="xandria-lightbox-close" id="lightbox-close">&times;</button>
+          <div class="xandria-lightbox-carousel" id="lightbox-carousel">
+            ${Array.from(images).map(img => `
+              <div class="xandria-lightbox-cell">
+                <img src="${img.src}" alt="${img.alt}">
+              </div>
+            `).join('')}
+          </div>
+          <button class="xandria-lightbox-nav xandria-lightbox-prev" id="lightbox-prev">‹</button>
+          <button class="xandria-lightbox-nav xandria-lightbox-next" id="lightbox-next">›</button>
+          <div class="xandria-lightbox-info">
+            <span id="lightbox-counter"></span>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Add lightbox to body
+    document.body.insertAdjacentHTML('beforeend', lightboxHtml);
+    
+    var lightbox = document.getElementById('xandria-lightbox');
+    var lightboxCarousel = document.getElementById('lightbox-carousel');
+    var counter = document.getElementById('lightbox-counter');
+    
+    // Initialize lightbox carousel
+    var lightboxFlickity = new Flickity(lightboxCarousel, {
+      cellAlign: 'center',
+      contain: true,
+      pageDots: true,
+      prevNextButtons: false,
+      initialIndex: initialIndex,
+      adaptiveHeight: false
+    });
+
+    // Update counter
+    function updateCounter() {
+      counter.textContent = `${lightboxFlickity.selectedIndex + 1} / ${images.length}`;
+    }
+    
+    updateCounter();
+    lightboxFlickity.on('change', updateCounter);
+
+    // Show lightbox
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    // Event handlers
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-prev').addEventListener('click', function() {
+      lightboxFlickity.previous();
+    });
+    document.getElementById('lightbox-next').addEventListener('click', function() {
+      lightboxFlickity.next();
+    });
+    
+    // Close on overlay click
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    function closeLightbox() {
+      lightbox.remove();
+      document.body.style.overflow = '';
+    }
+  }
 });
 </script>

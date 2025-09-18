@@ -144,7 +144,6 @@ h1, .f2, .f-subheadline-l {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-}t;
 }
 
 h2, .f3, .f4 {
@@ -259,18 +258,26 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 /* Image Carousel */
 .property-image-container {
   position: relative;
-  aspect-ratio: 4/3;
+  /* Use a fixed height for better compatibility with Flickity */
+  height: 280px;
+  width: 100%;
   overflow: hidden;
+  line-height: 0;
+  background: #f5f5f5;
 }
 
 .property-carousel {
   width: 100%;
   height: 100%;
+  line-height: 0;
 }
 
 .carousel-cell {
   width: 100%;
-  height: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-cell img {
@@ -278,6 +285,30 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.2s ease;
+}
+
+.carousel-cell img:hover {
+  transform: scale(1.02);
+}
+
+/* Fallback for browsers with limited aspect-ratio support */
+.property-image-container img {
+  display: block;
+}
+
+/* Lightbox overlay styles */
+.xandria-lightbox-overlay img {
+  transition: transform 0.18s ease;
+}
+
+/* Ensure nav buttons are visible on small screens */
+@media (max-width: 640px) {
+  .carousel-prev, .carousel-next {
+    opacity: 1;
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .carousel-nav {
@@ -290,10 +321,11 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   justify-content: space-between;
   padding: 0 1rem;
   pointer-events: none;
+  z-index: 5;
 }
 
 .carousel-prev, .carousel-next {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -305,14 +337,15 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--xandria-primary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.18s ease;
   pointer-events: auto;
   opacity: 0;
 }
 
-.property-card:hover .carousel-prev,
-.property-card:hover .carousel-next {
+/* Show nav when hovering the image container */
+.property-image-container:hover .carousel-prev,
+.property-image-container:hover .carousel-next {
   opacity: 1;
 }
 

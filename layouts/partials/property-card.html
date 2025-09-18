@@ -17,7 +17,7 @@
       <div class="property-carousel">
         {{ range . }}
           <div class="carousel-cell">
-            <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy">
+            <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy" style="cursor: pointer;">
           </div>
         {{ end }}
       </div>

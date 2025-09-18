@@ -6,12 +6,18 @@
       
       <div class="listing-main">
         {{ if .Params.images }}
-        <div class="gallery property-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false, "wrapAround": true }'>
-          {{ range .Params.images }}
-            <div class="carousel-cell" style="width: 100%;">
-              <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" style="width: 100%; height: auto; border-radius: 8px;" />
-            </div>
-          {{ end }}
+        <div class="property-image-container">
+          <div class="property-carousel">
+            {{ range .Params.images }}
+              <div class="carousel-cell">
+                <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" style="border-radius: 8px; cursor: pointer;" />
+              </div>
+            {{ end }}
+          </div>
+          <div class="carousel-nav">
+            <button class="carousel-prev" aria-label="Vorige">‹</button>
+            <button class="carousel-next" aria-label="Volgende">›</button>
+          </div>
         </div>
         {{ end }}
 
@@ -39,7 +45,6 @@
             <ul style="list-style: none; padding-left: 0;">
               {{ range . }}
                 <li style="margin-bottom: 0.5rem; display: flex; align-items: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16" style="color: #1800ad; margin-right: 8px; flex-shrink: 0;"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
                   {{ . }}
                 </li>
               {{ end }}
@@ -48,7 +53,7 @@
         {{ end }}
 
         <div style="text-align: center;">
-          <a href="mailto:info@xandria.be?subject=Interesse in {{ .Title }}" class="btn-cta" style="display: block; width: 100%; margin-bottom: 1rem;">Contact Opnemen</a>
+          <a href="{{ "/contact" | relURL }}" class="btn-cta" style="display: block; width: 100%; margin-bottom: 1rem;">Contact Opnemen</a>
         </div>
       </aside>
     </div>

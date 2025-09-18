@@ -37,6 +37,16 @@
           <p style="font-size: 1.25rem; font-weight: 600; color: #1800ad; margin: 0;">
             <strong>Prijs:</strong> €{{ .Params.price }}/maand
           </p>
+          {{ with .Params.vaste_kosten }}
+          <p style="font-size: 1rem; margin-top: 0.5rem;">
+            <strong>Vaste kosten:</strong> €{{ . }}/maand
+          </p>
+          {{ end }}
+          {{ with .Params.beschikbaar_vanaf }}
+          <p style="font-size: 1rem; margin-top: 0.5rem;">
+            <strong>Beschikbaar vanaf:</strong> {{ . | time.Format ":date_long" }}
+          </p>
+          {{ end }}
         </div>
 
         {{ with .Params.features }}
@@ -50,6 +60,26 @@
               {{ end }}
             </ul>
           </div>
+        {{ end }}
+
+        {{ if or .Params.epc .Params.staat .Params.beglazing .Params.verwarming .Params.water .Params.mobiscore .Params.keuken .Params.badkamer .Params.parkeerplaats .Params.lift .Params.verdieping .Params.huisdieren }}
+        <div class="details" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+          <h3 style="font-family: 'Montserrat', sans-serif; color: #1800ad; margin-bottom: 1rem;">Details</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            {{ with .Params.epc }}<li style="margin-bottom: 0.5rem;"><strong>EPC:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.staat }}<li style="margin-bottom: 0.5rem;"><strong>Staat:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.beglazing }}<li style="margin-bottom: 0.5rem;"><strong>Beglazing:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.verwarming }}<li style="margin-bottom: 0.5rem;"><strong>Verwarming:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.water }}<li style="margin-bottom: 0.5rem;"><strong>Water:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.mobiscore }}<li style="margin-bottom: 0.5rem;"><strong>Mobiscore:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.keuken }}<li style="margin-bottom: 0.5rem;"><strong>Keuken:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.badkamer }}<li style="margin-bottom: 0.5rem;"><strong>Badkamer:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.parkeerplaats }}<li style="margin-bottom: 0.5rem;"><strong>Parkeerplaats:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.lift }}<li style="margin-bottom: 0.5rem;"><strong>Lift:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.verdieping }}<li style="margin-bottom: 0.5rem;"><strong>Verdieping:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.huisdieren }}<li style="margin-bottom: 0.5rem;"><strong>Huisdieren:</strong> {{ . }}</li>{{ end }}
+          </ul>
+        </div>
         {{ end }}
 
         <div style="text-align: center;">

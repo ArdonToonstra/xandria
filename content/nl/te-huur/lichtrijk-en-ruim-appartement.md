@@ -2,7 +2,7 @@
 title: "Lichtrijk en ruim appartement "
 status: Verhuurd
 type: Appartement
-price: ""
+price: 900
 address: Damhertenlaan 7, 2650 Edegem
 surface: 100
 rooms: ""

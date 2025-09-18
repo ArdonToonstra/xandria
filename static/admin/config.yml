@@ -2,12 +2,11 @@ backend:
   name: github
   branch: main
   repo: ArdonToonstra/xandria
-  base_url: https://decap-cms-backend-187698924322.europe-west1.run.app
+  base_url: https://decap-cms-backend-187698924322.europe-west1.run.app/
   site_domain: xandria-bv.web.app
   # Optional: restrict OAuth scopes (default includes repo access). Uncomment to set explicitly:
   # auth_scope: repo
-  # Add your GitHub OAuth App client id here after creating it (see README steps below)
-  client_id: "Ov23liUnzbC6nD0eSgil"
+  # client_id not needed when using self-hosted backend
 
   # If you prefer CMS to create pull requests instead of committing directly,
   # uncomment and set the following:

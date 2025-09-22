@@ -10,6 +10,10 @@
   {{ partials.Include "carousel-scripts.html" . }}
 {{ end }}
 
+{{ define "body_classes" }}
+  avenir bg-near-white no-main-bottom-padding
+{{ end }}
+
 {{ define "main" }}
 <div class="hero-section">
   <div class="hero-content">
@@ -77,4 +81,6 @@
   </div>
 </section>
 
-{{ end }}
+    {{ partials.Include "contact-banner.html" . }}
+
+    {{ end }}

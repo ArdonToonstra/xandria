@@ -525,7 +525,7 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 
 .site-menu {
   display: flex; /* ensure horizontal layout on desktop */
-  gap: 1.75rem; /* space between menu items */
+  gap: 1.5rem; /* space between menu items */
   align-items: center;
 }
 
@@ -535,6 +535,21 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   border-radius: 6px;
   transition: background 0.2s ease, color 0.2s ease;
   display: inline-block;
+}
+
+/* Emphasized Contact button in the header */
+.site-menu a.nav-cta {
+  background: var(--xandria-primary);
+  color: var(--xandria-white);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(24,0,173,0.18);
+}
+.site-menu a.nav-cta:hover {
+  background: #0f008f;
+  text-decoration: none;
+  color: var(--xandria-white);
 }
 
 .site-menu a:hover {
@@ -622,6 +637,7 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   .site-nav__toggle { display: flex; }
   .site-menu { display: none; position: absolute; right: 1rem; top: 64px; background: var(--xandria-white); padding: 1rem; border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
   .site-nav.site-menu--open .site-menu { display: block; }
+  .site-menu a.nav-cta { display: block; background: transparent; color: var(--xandria-primary); padding: 0.75rem 1rem; box-shadow: none; border-radius: 6px; }
 }
 
 /* Call to Action Buttons */
@@ -748,6 +764,50 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 .gallery img:hover {
   transform: scale(1.05);
 }
+
+/* Contact Banner */
+.contact-banner {
+  background: linear-gradient(90deg, rgba(24,0,173,0.06) 0%, rgba(153,197,255,0.12) 100%);
+  color: rgba(24,0,173,1);
+  padding: 2rem 0;
+  border-top: 1px solid var(--xandria-gray-border);
+}
+.contact-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.contact-banner-text h3 {
+  margin: 0;
+  font-family: 'Bree Serif', serif;
+  font-size: 1.5rem;
+}
+.contact-banner-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.contact-phone {
+  background: transparent;
+  color: var(--xandria-primary);
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.contact-phone:hover { opacity: 0.95; }
+
+@media (max-width: 768px) {
+  .contact-banner-inner { flex-direction: column; text-align: center; }
+  .contact-banner-text h3 { font-size: 1.25rem; }
+}
+
+/* Remove extra bottom padding on main when used on homepage */
+body.no-main-bottom-padding main { padding-bottom: 0; }
+
+/* Make sure footer sits directly under the last section */
+.site-footer { margin-top: 0; }
 
 /* Property Status Badges */
 .status-badge {

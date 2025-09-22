@@ -13,14 +13,39 @@
 {{ define "main" }}
 <div class="hero-section">
   <div class="hero-content">
-    <h1 class="hero-title">Welkom bij Xandria Huisvesting</h1>
-    <p class="hero-subtitle">Uw partner in vastgoedontwikkeling en -beheer</p>
+    <h1 class="hero-title">Welkom bij Xandria</h1>
+    <p class="hero-subtitle">Betrouwbaar vastgoed in eigen beheer</p>
+    <p>Bij Xandria focussen we op kwalitatieve vastgoedontwikkeling, professioneel beheer en verhuur. Onze expertise ligt in residentiële appartementen en parkeergarages in en rond Antwerpen.</p>
+    <p>Als familiebedrijf houden we alles in eigen beheer, zodat u als verkoper of huurder kan rekenen op persoonlijke opvolging, duidelijke communicatie en betrouwbaarheid.</p>
   </div>
 </div>
 
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title">DIENSTEN</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Vastgoedontwikkeling</h3>
+        <p>Xandria koopt appartementen en parkeergarages aan en optimaliseert deze waar nodig.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Verhuur</h3>
+        <p>Wij focussen ons op de verhuur van appartementen en parkeergarages in en rond Antwerpen.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Vastgoedbeheer</h3>
+        <p>Van technisch onderhoud tot financieel beheer: wij houden het volledige vastgoedbeheer in eigen handen en garanderen zo een persoonlijke en kwalitatieve aanpak.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="featured-properties">
   <div class="container">
-    <h2 class="section-title">Beschikbare Appartementen</h2>
+    <h2 class="section-title">BESCHIKBARE APPARTEMENTEN</h2>
     <div class="properties-grid">
       {{- $teHuurPages := where .Site.Pages "Section" "te-huur" -}}
       {{- $allPages := where $teHuurPages "Kind" "page" -}}
@@ -48,29 +73,6 @@
     
     <div class="view-all-section">
       <a href="{{ "/te-huur" | relURL }}" class="btn-secondary btn-large">Bekijk Alle Appartementen</a>
-    </div>
-  </div>
-</section>
-
-<section class="services-section">
-  <div class="container">
-    <h2 class="section-title">Onze Diensten</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🏗️</div>
-        <h3>Vastgoedontwikkeling</h3>
-        <p>Professionele ontwikkeling van kwalitatieve woonprojecten</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🔧</div>
-        <h3>Vastgoedbeheer</h3>
-        <p>Volledig beheer van uw vastgoedportefeuille</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🏠</div>
-        <h3>Verhuur</h3>
-        <p>Bemiddeling en beheer van verhuurpanden</p>
-      </div>
     </div>
   </div>
 </section>

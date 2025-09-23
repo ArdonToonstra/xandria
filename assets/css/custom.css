@@ -166,7 +166,11 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, var(--xandria-primary) 0%, var(--xandria-light-blue) 100%);
+  /* Layer a subtle dark overlay on top of the blue gradient to reduce brightness
+     and improve legibility of text (both white and dark text near the edges). */
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.22), rgba(247, 247, 247, 0.14)),
+    linear-gradient(135deg, var(--xandria-primary) 0%, var(--xandria-light-blue) 100%);
   color: var(--xandria-white);
   padding: 0; /* reset padding so we can size with height */
   display: flex;

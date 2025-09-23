@@ -169,10 +169,8 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   background: linear-gradient(135deg, var(--xandria-primary) 0%, var(--xandria-light-blue) 100%);
   color: var(--xandria-white);
   padding: 0; /* reset padding so we can size with height */
-  text-align: center;
   display: flex;
   align-items: center; /* vertical center */
-  justify-content: center;
   min-height: calc(100vh - 80px); /* above the fold: account roughly for header height */
 }
 
@@ -182,12 +180,56 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   padding: 4rem 1rem; /* internal spacing */
 }
 
+/* Two-column hero layout */
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 480px; /* give image slightly more space */
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-text-box {
+  background: transparent;
+  color: var(--xandria-white);
+  padding: 2rem 0;
+  margin-right: 0.5rem;
+  border-radius: 0;
+  text-align: left;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 40px;
+  display: block;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+  
+}
+
+.hero-ctas {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Brand name colored in site blue */
+.brand-name { color: var(--xandria-primary); }
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-image { order: -1; } /* show image above text on small screens */
+  .hero-text-box { padding: 1rem 0; }
+}
+
 .hero-title {
   font-family: 'Bree Serif', serif;
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3.25rem;
+  margin-bottom: 0.5rem;
   color: var(--xandria-white) !important;
+  text-align: left;
 }
+
+.hero-subtitle { text-align: left; color: rgba(255,255,255,0.9); }
 
 .hero-subtitle {
   font-family: 'Open Sans', sans-serif;

@@ -16,11 +16,21 @@
 
 {{ define "main" }}
 <div class="hero-section">
-  <div class="hero-content">
-    <h1 class="hero-title">Welkom bij Xandria</h1>
-    <p class="hero-subtitle">Betrouwbaar vastgoed in eigen beheer</p>
-    <p>Bij Xandria focussen we op kwalitatieve vastgoedontwikkeling, professioneel beheer en verhuur. Onze expertise ligt in residentiële appartementen en parkeergarages in en rond Antwerpen.</p>
-    <p>Als familiebedrijf houden we alles in eigen beheer, zodat u als verkoper of huurder kan rekenen op persoonlijke opvolging, duidelijke communicatie en betrouwbaarheid.</p>
+  <div class="container hero-inner">
+    <div class="hero-text-box">
+  <h1 class="hero-title">Welkom bij <span class="brand-name">Xandria</span></h1>
+      <p class="hero-subtitle">Betrouwbaar vastgoed in eigen beheer</p>
+      <p>Bij Xandria focussen we op kwalitatieve vastgoedontwikkeling, professioneel beheer en verhuur. Onze expertise ligt in residentiële appartementen en parkeergarages in en rond Antwerpen.</p>
+      <p>Als familiebedrijf houden we alles in eigen beheer, zodat u als verkoper of huurder kan rekenen op persoonlijke opvolging, duidelijke communicatie en betrouwbaarheid.</p>
+      <div class="hero-ctas">
+        <a class="btn-secondary" href="{{ "/over-ons" | relURL }}">Over ons</a>
+        <a class="btn-secondary" href="{{ "/te-huur" | relURL }}">Te huur</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="{{ "/images/homepage-hero-banner-picture.png" | relURL }}" alt="Xandria vastgoed" />
+    </div>
   </div>
 </div>
 

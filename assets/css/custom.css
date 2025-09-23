@@ -18,6 +18,18 @@ h1, .f2, .f-subheadline-l {
   font-weight: 400 !important;
 }
 
+/* Ensure content lists inherit the site body font (prevent serif from leaking in) */
+.nested-copy-line-height,
+.nested-copy-line-height p,
+.nested-copy-line-height ul,
+.nested-copy-line-height li,
+.measure-wide,
+.measure-wide p,
+.measure-wide ul,
+.measure-wide li {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
 /* Site Footer */
 .site-footer {
   background: #1a1a1a !important;

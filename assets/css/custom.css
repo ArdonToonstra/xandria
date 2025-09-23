@@ -181,7 +181,7 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   /* Layer a subtle dark overlay on top of the blue gradient to reduce brightness
      and improve legibility of text (both white and dark text near the edges). */
   background:
-    linear-gradient(rgba(255, 255, 255, 0.22), rgba(247, 247, 247, 0.14)),
+  
     linear-gradient(135deg, var(--xandria-primary) 0%, var(--xandria-light-blue) 100%);
   color: var(--xandria-white);
   padding: 0; /* reset padding so we can size with height */
@@ -243,6 +243,17 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   margin-bottom: 0.5rem;
   color: var(--xandria-white) !important;
   text-align: left;
+}
+
+/* Ensure hero text stays white even when global rules set text to black with !important */
+.hero-section,
+.hero-section .hero-text-box,
+.hero-section .hero-text-box h1,
+.hero-section .hero-text-box h2,
+.hero-section .hero-text-box h3,
+.hero-section .hero-text-box p,
+.hero-section .hero-text-box a {
+  color: var(--xandria-white) !important;
 }
 
 .hero-subtitle { text-align: left; color: rgba(255,255,255,0.9); }

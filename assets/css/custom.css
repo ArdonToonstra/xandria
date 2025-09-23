@@ -168,14 +168,18 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 .hero-section {
   background: linear-gradient(135deg, var(--xandria-primary) 0%, var(--xandria-light-blue) 100%);
   color: var(--xandria-white);
-  padding: 4rem 0;
+  padding: 0; /* reset padding so we can size with height */
   text-align: center;
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center;
+  min-height: calc(100vh - 80px); /* above the fold: account roughly for header height */
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 4rem 1rem; /* internal spacing */
 }
 
 .hero-title {
@@ -410,6 +414,11 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 /* Services Section */
 .services-section {
   background: var(--xandria-gray-light);
+}
+
+/* Ensure services section sits clearly below the hero on small screens */
+@media (max-width: 900px) {
+  .services-section { padding-top: 3.5rem; }
 }
 
 .services-grid {

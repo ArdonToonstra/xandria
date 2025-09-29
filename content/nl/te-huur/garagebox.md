@@ -1,7 +1,7 @@
 ---
 title: Veilige garagebox in Edegem
 status: Beschikbaar
-property_type: Garage
+property_type: Appartement
 price: 130
 address: Grijpegemplein 16, 2650 Edegem
 surface: 20

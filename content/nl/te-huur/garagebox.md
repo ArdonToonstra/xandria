@@ -1,5 +1,5 @@
 ---
-title: Veilige garagebox in Edegem
+title: Veilige private garagebox in Edegem
 status: Beschikbaar
 property_type: Appartement
 price: 130

@@ -1,40 +1,38 @@
 ---
-date: 2025-09-10T20:00:00+02:00
+available_from: 2025-11-01
 draft: false
-title: Ruim Appartement met Tuin
 property_type: Appartement
-status: Beschikbaar
-price: 1450
 surface: 120
+balcony: false
+bathrooms: 2
+price: 1450
+neighborhood: Borgerhout
+date: 2025-09-10T20:00:00+02:00
+utilities_included: false
+furnished: false
+title: Ruim Appartement met Tuin
+status: Verhuurd
+address: Plantin en Moretuslei 156, 2140 Borgerhout
 rooms: 5
 bedrooms: 3
-bathrooms: 2
 garden: true
-balcony: false
-parking: true
-furnished: false
-pets_allowed: true
 smoking_allowed: false
-images: [
-  '/images/listings/appartement-tuin/1.jpg',
-  '/images/listings/appartement-tuin/2.jpg',
-  '/images/listings/appartement-tuin/3.jpg'
-]
-features: [
-  'Privé tuin van 40m²',
-  'Dubbele garage',
-  'Vloerverwarming',
-  'Energielabel A+',
-  'Domotica systeem',
-  'Zonnewering',
-  'Huisdieren welkom'
-]
-address: 'Plantin en Moretuslei 156, 2140 Borgerhout'
-neighborhood: 'Borgerhout'
-available_from: '2025-11-01'
-lease_duration: 'Langetermijn'
+images:
+  - /images/listings/appartement-tuin/1.jpg
+  - /images/listings/appartement-tuin/2.jpg
+  - /images/listings/appartement-tuin/3.jpg
+parking: true
+lease_duration: Langetermijn
+features:
+  - Privé tuin van 40m²
+  - Dubbele garage
+  - Vloerverwarming
+  - Energielabel A+
+  - Domotica systeem
+  - Zonnewering
+  - Huisdieren welkom
+pets_allowed: true
 deposit: 2900
-utilities_included: false
 ---
 
 Een uniek gelijkvloers appartement met eigen tuin, gelegen in een rustige straat in Borgerhout. Dit appartement combineert het comfort van moderne appartementsverhuir met de luxe van een eigen buitenruimte.

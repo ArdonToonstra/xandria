@@ -1,5 +1,5 @@
 ---
-title: Garagebox
+title: Veilige garagebox in Edegem
 status: Beschikbaar
 property_type: Garage
 price: 130

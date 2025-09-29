@@ -1,5 +1,5 @@
 ---
-title: Modern en gerenoveerd 2 slaapkamer appartement
+title: Modern en gerenoveerd appartement
 status: Beschikbaar
 property_type: Appartement
 price: 950

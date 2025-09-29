@@ -1,38 +1,36 @@
 ---
-date: 2025-09-10T19:24:18+02:00
+available_from: 2025-10-01
 draft: false
-title: Modern Appartement Wijttenbachstraat
 property_type: Appartement
-status: Beschikbaar
-price: 1250
 surface: 95
+balcony: true
+bathrooms: 1
+price: 1250
+neighborhood: Centrum
+date: 2025-09-10T19:24:18+02:00
+utilities_included: false
+furnished: false
+title: Modern Appartement Wijttenbachstraat
+status: Verhuurd
+address: Wijttenbachstraat 24, 2000 Antwerpen
 rooms: 4
 bedrooms: 2
-bathrooms: 1
 garden: false
-balcony: true
-parking: true
-furnished: false
-pets_allowed: true
 smoking_allowed: false
-images: [
-  /images/listings/eerste-appartement/0.jpg,
-  /images/listings/eerste-appartement/1.jpg
-]
-features: [
-  Centrale verwarming,
-  Volledig gerenoveerd 2023,
-  Energielabel A,
-  Parkeerplaats inbegrepen,
-  Lift aanwezig,
-  Huisdieren toegestaan
-]
-address: Wijttenbachstraat 24, 2000 Antwerpen
-neighborhood: Centrum
-available_from: 2025-10-01
+images:
+  - /images/listings/eerste-appartement/0.jpg
+  - /images/listings/eerste-appartement/1.jpg
+parking: true
 lease_duration: Langetermijn
+features:
+  - Centrale verwarming
+  - Volledig gerenoveerd 2023
+  - Energielabel A
+  - Parkeerplaats inbegrepen
+  - Lift aanwezig
+  - Huisdieren toegestaan
+pets_allowed: true
 deposit: 2500
-utilities_included: false
 ---
 
 Dit prachtige moderne appartement is gelegen in het hart van Antwerpen aan de Wijttenbachstraat. Het appartement werd volledig gerenoveerd in 2023 en beschikt over alle moderne voorzieningen.

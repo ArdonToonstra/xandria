@@ -1,11 +1,11 @@
 ---
-title: Lichtrijk en ruim appartement
+title: Lichtrijk en ruim appartement in Mortsel
 status: Verhuurd
 property_type: Appartement
 price: 900
 address: Damhertenlaan 7, 2650 Edegem
 surface: 100
-rooms: ""
+rooms: 2
 bedrooms: 2
 balcony: true
 images:
@@ -22,11 +22,46 @@ features:
   - "Keuken: zonder toestellen"
   - "Gemeenschappelijk kosten: €25"
   - "EPC: B"
+vaste_kosten: 25
+epc: B
+staat: Goede staat
+beglazing: Dubbele beglazing
+verwarming: Verwarming op gas
+water: Gemeenschappelijke meter
+mobiscore: 9,1/10
+keuken: Keuken met basisvoorzieningen
+badkamer: Badkamer met bad
+parkeerplaats: Geen parkeerplaats
+lift: Nee
+verdieping: 2e verdieping
+huisdieren: Toegestaan
 ---
-Ontdek dit prachtige, instapklare appartement van maar liefst 100 m², gelegen in een rustige en gegeerde buurt in Mortsel. Dankzij de grote raampartijen geniet u de hele dag van een overvloed aan natuurlijk licht. De ruime indeling en hoogwaardige afwerking maken dit de ideale plek om thuis te komen.
+Ontdek dit ruime en lichtrijke appartement van ca. 100 m², ideaal voor wie op zoek is naar comfortabel wonen met buitenruimte aan beide zijden van het gebouw. Gelegen op de **2e verdieping** van een kleinschalig gebouw, biedt dit appartement een **functionele indeling met** veel natuurlijk licht. 
 
-De locatie is perfect: op wandel- en fietsafstand van winkels, openbaar vervoer (tram, bus en trein), scholen en gezellige parken. U geniet hier van een uitstekende bereikbaarheid en alle voordelen van wonen nabij de stad, maar toch in een aangenaam rustige omgeving.
+## Locatie
+
+De locatie is perfect: op wandel- en fietsafstand van winkels, openbaar vervoer (tram, bus en trein), scholen en gezellige parken. U geniet hier van een uitstekende bereikbaarheid en alle voordelen van wonen nabij de stad, maar toch in een aangenaam rustige omgeving. 
+
+Mobiscore 9,1/10 
+
+## Indeling
+
+Bij het betreden van het appartement kom je binnen in een inkomhal. Van daaruit wandel je door naar de ruime leefruimte, die dankzij grote raampartijen baadt in het natuurlijke licht. Aan de voorzijde van het appartement vind je het eerste terras, bereikbaar via de keuken – een ideale plek om te genieten van de ochtendzon.
+
+De twee volwaardige slaapkamers bevinden zich aan de rustige achterzijde van het gebouw en geven uit op het tweede terras, dat uitzicht biedt op een groen. Verder is er een functionele badkamer met ligbad, een dubbele lavabo en aansluitingen voor wasmachine en droogkast. Het toilet bevindt zich apart, wat extra comfort biedt voor bewoners en gasten.
+
+Dankzij de terrassen aan beide zijden van het appartement geniet je de hele dag door van buitenruimte, zonlicht en ventilatie.
+
+## Voorzieningen
+
+* 100 m² bewoonbare oppervlakte
+* Twee terrassen (voor- en achteraan)
+* 2 slaapkamers
+* Gemeenschappelijke meter voor water (€25/maand provisie) 
+* EPC B
 
 Per direct beschikbaar.
+
+## Interesse? 
 
 Heb je interesse of wil je een kijkje komen nemen? Neem gerust contact op via [het contactformulier](https://xandria-bv.web.app/contact/).

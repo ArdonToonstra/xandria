@@ -1,0 +1,13 @@
+{{ $title := .Get "title" }}
+{{ $buttonText := .Get "button-text" }}
+{{ $buttonLink := .Get "button-link" }}
+
+<section class="cta-section bg-gradient">
+  <div class="container">
+    <div class="cta-content">
+      <h2>{{ $title }}</h2>
+      <div class="cta-text">{{ .Inner | markdownify }}</div>
+      <a href="{{ $buttonLink }}" class="btn-secondary">{{ $buttonText }}</a>
+    </div>
+  </div>
+</section>

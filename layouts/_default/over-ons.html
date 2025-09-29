@@ -1,0 +1,17 @@
+{{ define "title" }}
+  {{ .Params.meta_title | default .Title }}
+{{ end }}
+
+{{ define "meta" }}
+  <meta name="description" content="{{ .Params.meta_description }}">
+{{ end }}
+
+{{ define "body_classes" }}
+  avenir bg-near-white no-main-bottom-padding
+{{ end }}
+
+{{ define "main" }}
+<div class="over-ons-page">
+  {{ .Content }}
+</div>
+{{ end }}

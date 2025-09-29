@@ -1,5 +1,5 @@
 baseURL = 'https://xandria-bv.web.app/'
-title = 'Xandria Huisvesting'
+title = 'Xandria'
 theme = 'ananke'
 
 defaultContentLanguage = 'nl'

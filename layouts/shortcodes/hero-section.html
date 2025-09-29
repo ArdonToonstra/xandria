@@ -1,0 +1,12 @@
+{{ $title := .Get "title" }}
+{{ $subtitle := .Get "subtitle" }}
+
+<section class="over-ons-hero bg-off-white">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ $title }}</h1>
+      <p class="hero-subtitle">{{ $subtitle }}</p>
+      <div class="hero-description">{{ .Inner | markdownify }}</div>
+    </div>
+  </div>
+</section>

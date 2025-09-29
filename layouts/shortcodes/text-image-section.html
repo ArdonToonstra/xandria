@@ -1,0 +1,16 @@
+{{ $title := .Get "title" }}
+{{ $imagePosition := .Get "image-position" | default "right" }}
+
+<section class="text-image-section bg-white">
+  <div class="container">
+    <div class="section-content">
+      <div class="text-content">
+        <h2>{{ $title }}</h2>
+        <div class="text-body">{{ .Inner | markdownify }}</div>
+      </div>
+      <div class="hero-image">
+        <img src="{{ "/images/overonspage-hero-banner-picture.jpg" | relURL }}" alt="{{ $title }}" />
+      </div>
+    </div>
+  </div>
+</section>

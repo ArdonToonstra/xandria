@@ -1,0 +1,25 @@
+{{ $title := .Get "title" }}
+
+<section class="vision-section bg-light">
+  <div class="container">
+    <h2>{{ $title }}</h2>
+    <div class="vision-intro">{{ .Inner | markdownify }}</div>
+    <div class="services-grid vision-grid">
+      <!-- Vision cards will be populated by subsequent vision-value shortcodes via JavaScript -->
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Move all vision-card elements into the vision-grid
+  const container = document.querySelector('.vision-grid');
+  const visionCards = document.querySelectorAll('.vision-card');
+  
+  if (container && visionCards.length > 0) {
+    visionCards.forEach(card => {
+      container.appendChild(card);
+    });
+  }
+});
+</script>

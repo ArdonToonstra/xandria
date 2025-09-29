@@ -1,0 +1,11 @@
+{{ $title := .Get "title" }}
+{{ $icon := "" }}
+{{ if eq $title "Transparantie" }}{{ $icon = "🔍" }}{{ end }}
+{{ if eq $title "Respect" }}{{ $icon = "🤝" }}{{ end }}
+{{ if eq $title "Zorgvuldigheid" }}{{ $icon = "💎" }}{{ end }}
+
+<div class="service-card vision-card">
+  <div class="service-icon">{{ $icon }}</div>
+  <h3>{{ $title }}</h3>
+  <div class="service-description">{{ .Inner | markdownify }}</div>
+</div>

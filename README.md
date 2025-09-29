@@ -1,4 +1,4 @@
-# Xandria Huisvesting — Static Site (Hugo)
+# Xandria — Static Site (Hugo)
 
 Xandria is a small multilingual static site built with Hugo (Ananke theme) used to list rental apartments and related services.
 

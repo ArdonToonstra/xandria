@@ -4,7 +4,8 @@ status: Beschikbaar
 property_type: Garage
 price: 130
 address: Grijpegemplein 16, 2650 Edegem
-surface: ""
+surface: 20
+rooms: 1
 images:
   - /images/whatsapp-image-2025-09-16-at-19.09.57.jpeg
   - /images/whatsapp-image-2025-09-16-at-19.09.57-2-.jpeg

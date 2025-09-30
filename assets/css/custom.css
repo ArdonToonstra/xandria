@@ -769,11 +769,6 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
   display: inline-block;
 }
 
-.property-action .btn-cta:hover {
-  background: var(--xandria-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(24, 0, 173, 0.3);
-}
 
 /* Services Section */
 .services-section {
@@ -1207,6 +1202,53 @@ body.no-main-bottom-padding main {
 body.no-main-bottom-padding .over-ons-page .cta-section:last-child {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
+}
+
+/* Panden Page Styles */
+.panden-page .property-type-item {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.panden-page .property-type-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(24, 0, 173, 0.15);
+  background: white;
+}
+
+.panden-page .criteria-item {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.panden-page .criteria-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(24, 0, 173, 0.15);
+}
+
+/* Responsive adjustments for panden page */
+@media (max-width: 768px) {
+  .panden-page h1 {
+    font-size: 2.2rem !important;
+  }
+  
+  .panden-page h2 {
+    font-size: 2rem !important;
+  }
+  
+  .criteria-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .panden-page h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  .panden-page h2 {
+    font-size: 1.6rem !important;
+  }
 }
 
 /* Property Status Badges */

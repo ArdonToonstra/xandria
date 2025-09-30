@@ -1,0 +1,169 @@
+{{ define "body_classes" }}no-main-bottom-padding{{ end }}
+
+{{ define "main" }}
+<div class="panden-page">
+  <!-- Hero Section -->
+  <section class="bg-off-white">
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 4rem 2rem;">
+      <h1 style="font-family: 'Bree Serif', serif; color: var(--xandria-primary); font-size: 3rem; text-align: center; margin-bottom: 1.5rem;">
+        {{ .Title }}
+      </h1>
+      <div class="hero-content" style="font-family: 'Open Sans', sans-serif; font-size: 1.2rem; line-height: 1.7; text-align: center; color: #555; max-width: 700px; margin: 0 auto;">
+        {{ with .Params.intro_text }}
+          {{ . | markdownify }}
+        {{ else }}
+          <p>Xandria is steeds op zoek naar nieuwe panden om ons vastgoedportfolio verder uit te breiden. Als familiebedrijf investeren wij in kwalitatieve appartementen en gebouwen in en rond Antwerpen. Wij staan open voor samenwerking met eigenaars die hun pand willen verkopen en hechten daarbij veel waarde aan transparantie en een correcte afhandeling.</p>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- What We're Looking For Section -->
+  <section class="bg-white">
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 4rem 2rem;">
+      <h2 style="font-family: 'Montserrat', sans-serif; color: var(--xandria-primary); font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">
+        {{ with .Params.looking_for_title }}{{ . }}{{ else }}Welke panden zoeken wij?{{ end }}
+      </h2>
+      <div class="property-types" style="display: grid; gap: 1.5rem; margin-top: 2rem;">
+        {{ with .Params.property_types }}
+          {{ $icons := slice "🏢" "🏗️" "🔨" }}
+          {{ range $index, $item := . }}
+          <div class="property-type-item" style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid var(--xandria-primary);">
+            <span style="color: var(--xandria-primary); font-size: 1.5rem; margin-top: 0.2rem;">{{ index $icons $index }}</span>
+            <div style="font-family: 'Open Sans', sans-serif; font-size: 1.1rem; line-height: 1.6; color: #333;">
+              {{ . | markdownify }}
+            </div>
+          </div>
+          {{ end }}
+        {{ else }}
+          <div class="property-type-item" style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid var(--xandria-primary);">
+            <span style="color: var(--xandria-primary); font-size: 1.5rem; margin-top: 0.2rem;">🏢</span>
+            <div style="font-family: 'Open Sans', sans-serif; font-size: 1.1rem; line-height: 1.6; color: #333;">
+              <p>Kleine appartementsgebouwen met minimaal 3 tot maximaal 5 appartementen, te koop van één eigenaar.</p>
+            </div>
+          </div>
+          <div class="property-type-item" style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid var(--xandria-primary);">
+            <span style="color: var(--xandria-primary); font-size: 1.5rem; margin-top: 0.2rem;">🏗️</span>
+            <div style="font-family: 'Open Sans', sans-serif; font-size: 1.1rem; line-height: 1.6; color: #333;">
+              <p>Bouwgrond waarop meerdere bouwlagen mogelijk is.</p>
+            </div>
+          </div>
+          <div class="property-type-item" style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid var(--xandria-primary);">
+            <span style="color: var(--xandria-primary); font-size: 1.5rem; margin-top: 0.2rem;">🔨</span>
+            <div style="font-family: 'Open Sans', sans-serif; font-size: 1.1rem; line-height: 1.6; color: #333;">
+              <p>Gebouwen met renovatie- of herbestemmingspotentieel.</p>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Criteria Section -->
+  <section class="bg-light">
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 4rem 2rem;">
+      <h2 style="font-family: 'Montserrat', sans-serif; color: var(--xandria-primary); font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">
+        {{ with .Params.criteria_title }}{{ . }}{{ else }}Waar letten wij op?{{ end }}
+      </h2>
+      <div class="criteria-intro" style="font-family: 'Open Sans', sans-serif; font-size: 1.1rem; line-height: 1.7; text-align: center; color: #555; margin-bottom: 3rem;">
+        {{ with .Params.criteria_intro }}
+          {{ . | markdownify }}
+        {{ else }}
+          <p>Bij de aankoop van panden waarderen wij:</p>
+        {{ end }}
+      </div>
+      
+      <div class="criteria-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        {{ with .Params.criteria_items }}
+          {{ range . }}
+          <div class="criteria-item" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border-top: 3px solid var(--xandria-light);">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+              <span style="color: var(--xandria-primary); font-size: 1.2rem;">✓</span>
+              <div style="font-family: 'Open Sans', sans-serif; font-size: 1rem; line-height: 1.6; color: #333;">
+                {{ . | markdownify }}
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        {{ else }}
+          <div class="criteria-item" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border-top: 3px solid var(--xandria-light); ">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--xandria-primary); font-size: 1.2rem;">✓</span>
+              <div style="font-family: 'Open Sans', sans-serif; font-size: 1rem; line-height: 1.6; color: #333;">
+                <p>Appartementen met 1–3 slaapkamers en een minimaal EPC-label C.</p>
+              </div>
+            </div>
+          </div>
+          <div class="criteria-item" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border-top: 3px solid var(--xandria-light); ">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--xandria-primary); font-size: 1.2rem;">✓</span>
+              <div style="font-family: 'Open Sans', sans-serif; font-size: 1rem; line-height: 1.6; color: #333;">
+                <p>Appartementsgebouwen zonder lift hebben onze voorkeur.</p>
+              </div>
+            </div>
+          </div>
+          <div class="criteria-item" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border-top: 3px solid var(--xandria-light); ">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--xandria-primary); font-size: 1.2rem;">✓</span>
+              <div style="font-family: 'Open Sans', sans-serif; font-size: 1rem; line-height: 1.6; color: #333;">
+                <p>Panden in de rand rond Antwerpen (Berchem, Mortsel, Edegem, Deurne, Wilrijk, Hove).</p>
+              </div>
+            </div>
+          </div>
+          <div class="criteria-item" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border-top: 3px solid var(--xandria-light); ">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--xandria-primary); font-size: 1.2rem;">✓</span>
+              <div style="font-family: 'Open Sans', sans-serif; font-size: 1rem; line-height: 1.6; color: #333;">
+                <p>Correcte prijs en duidelijke eigendomsdocumentatie.</p>
+              </div>
+            </div>
+          </div>
+          <div class="criteria-item" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border-top: 3px solid var(--xandria-light); ">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--xandria-primary); font-size: 1.2rem;">✓</span>
+              <div style="font-family: 'Open Sans', sans-serif; font-size: 1rem; line-height: 1.6; color: #333;">
+                <p>Mogelijkheid tot gefaseerde renovatie zonder juridische blokkades.</p>
+              </div>
+            </div>
+          </div>
+          <div class="criteria-item" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border-top: 3px solid var(--xandria-light); ">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--xandria-primary); font-size: 1.2rem;">✓</span>
+              <div style="font-family: 'Open Sans', sans-serif; font-size: 1rem; line-height: 1.6; color: #333;">
+                <p>Beschikbaarheid van plattegronden, technische keuringen of eerdere renovatierapporten.</p>
+              </div>
+            </div>
+          </div>
+          <div class="criteria-item" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border-top: 3px solid var(--xandria-light); ">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--xandria-primary); font-size: 1.2rem;">✓</span>
+              <div style="font-family: 'Open Sans', sans-serif; font-size: 1rem; line-height: 1.6; color: #333;">
+                <p>Panden die reeds verhuurd zijn (is een voordeel maar echter geen must).</p>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="cta-section bg-gradient">
+    <div class="container">
+      <div class="cta-content">
+        <h2>{{ with .Params.cta_title }}{{ . }}{{ else }}Heeft u een geschikt pand?{{ end }}</h2>
+        <div class="cta-text">
+          {{ with .Params.cta_text }}
+            {{ . | markdownify }}
+          {{ else }}
+            <p>Heeft u een pand dat aan deze criteria voldoet of wilt u meer informatie delen? Neem dan gerust contact met ons op via e-mail of bel ons op +04 XXXXXX</p>
+          {{ end }}
+        </div>
+        <a href="{{ "/contact" | relURL }}" class="btn-secondary">Contact Opnemen</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+{{ end }}

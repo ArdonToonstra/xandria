@@ -6,7 +6,6 @@ status: "Beschikbaar"
 property_type: "Appartement"
 price: 950
 surface: 85
-rooms: 3
 bedrooms: 2
 bathrooms: 1
 garden: false
@@ -26,7 +25,7 @@ features: [
   "Energielabel B"
 ]
 address: "Straatnaam 123, 2000 Antwerpen"
-neighborhood: "Centrum"
+gemeente: "Centrum"
 available_from: "{{ dateFormat "2006-01-02" .Date }}"
 lease_duration: "Langetermijn"
 deposit: 2850

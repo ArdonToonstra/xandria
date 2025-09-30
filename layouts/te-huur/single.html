@@ -1,4 +1,37 @@
 {{ define "main" }}
+  <style>
+    /* Responsive layout - only change order on mobile, keep desktop layout intact */
+    @media (max-width: 768px) {
+      .listing-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+      }
+      
+      .listing-sidebar {
+        order: 1; /* Show sidebar (price/specs) first on mobile */
+        position: static !important; /* Remove sticky on mobile */
+      }
+      
+      .listing-main {
+        order: 2; /* Show main content (description) second on mobile */
+      }
+      
+      .listing-detail {
+        padding: 1rem !important;
+      }
+      
+      .listing-detail h1 {
+        font-size: 2rem !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .listing-detail h1 {
+        font-size: 1.75rem !important;
+      }
+    }
+  </style>
   <article class="listing-detail" style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
     <h1 style="font-family: 'Bree Serif', serif; color: var(--xandria-primary, #1800ad); font-size: 2.5rem; margin-bottom: 1rem;">{{ .Title }}</h1>
     
@@ -47,37 +80,73 @@
             <strong>Beschikbaar vanaf:</strong> {{ . | time.Format ":date_long" }}
           </p>
           {{ end }}
-        </div>
-
-        {{ with .Params.features }}
-          <div class="features" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
-            <h3 style="font-family: 'Montserrat', sans-serif; color: #1800ad; margin-bottom: 1rem;">Kenmerken</h3>
-            <ul style="list-style: none; padding-left: 0;">
-              {{ range . }}
-                <li style="margin-bottom: 0.5rem; display: flex; align-items: center;">
-                  {{ . }}
-                </li>
-              {{ end }}
-            </ul>
+          
+          <!-- Property specs with icons -->
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e9ecef;">
+            {{ with .Params.property_type }}
+            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
+              <span style="font-size: 1rem;">
+                {{- if eq . "Appartement" -}}🏢
+                {{- else if eq . "Huis" -}}🏠
+                {{- else if eq . "Kantoor" -}}💼
+                {{- else if eq . "Garage" -}}🚗
+                {{- else if eq . "Overig" -}}🏘️
+                {{- else -}}🏘️
+                {{- end -}}
+              </span>
+              <span>{{ . }}</span>
+            </div>
+            {{ end }}
+            {{ with .Params.gemeente }}
+            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
+              <span style="font-size: 1rem;">📍</span>
+              <span>{{ . }}</span>
+            </div>
+            {{ end }}
+            {{ with .Params.surface }}
+            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
+              <span style="font-size: 1rem;">📐</span>
+              <span>{{ . }}m²</span>
+            </div>
+            {{ end }}
+            
+            {{ with .Params.bedrooms }}
+            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
+              <span style="font-size: 1rem;">🛏️</span>
+              <span>{{ . }} slaapkamers</span>
+            </div>
+            {{ end }}
+            {{ if .Params.garden }}
+            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
+              <span style="font-size: 1rem;">🌿</span>
+              <span>Tuin</span>
+            </div>
+            {{ end }}
+            {{ if .Params.balcony }}
+            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
+              <span style="font-size: 1rem;">🪴</span>
+              <span>Balkon</span>
+            </div>
+            {{ end }}
           </div>
-        {{ end }}
+        </div>
 
         {{ if or .Params.epc .Params.staat .Params.beglazing .Params.verwarming .Params.water .Params.mobiscore .Params.keuken .Params.badkamer .Params.parkeerplaats .Params.lift .Params.verdieping .Params.huisdieren }}
         <div class="details" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
-          <h3 style="font-family: 'Montserrat', sans-serif; color: #1800ad; margin-bottom: 1rem;">Details</h3>
+          <h3 style="font-family: 'Montserrat', sans-serif; color: #1800ad; margin-bottom: 1rem;">Kenmerken</h3>
           <ul style="list-style: none; padding-left: 0;">
-            {{ with .Params.epc }}<li style="margin-bottom: 0.5rem;"><strong>EPC:</strong> {{ . }}</li>{{ end }}
-            {{ with .Params.staat }}<li style="margin-bottom: 0.5rem;"><strong>Staat:</strong> {{ . }}</li>{{ end }}
-            {{ with .Params.beglazing }}<li style="margin-bottom: 0.5rem;"><strong>Beglazing:</strong> {{ . }}</li>{{ end }}
-            {{ with .Params.verwarming }}<li style="margin-bottom: 0.5rem;"><strong>Verwarming:</strong> {{ . }}</li>{{ end }}
-            {{ with .Params.water }}<li style="margin-bottom: 0.5rem;"><strong>Water:</strong> {{ . }}</li>{{ end }}
-            {{ with .Params.mobiscore }}<li style="margin-bottom: 0.5rem;"><strong>Mobiscore:</strong> {{ . }}</li>{{ end }}
-            {{ with .Params.keuken }}<li style="margin-bottom: 0.5rem;"><strong>Keuken:</strong> {{ . }}</li>{{ end }}
-            {{ with .Params.badkamer }}<li style="margin-bottom: 0.5rem;"><strong>Badkamer:</strong> {{ . }}</li>{{ end }}
-            {{ with .Params.parkeerplaats }}<li style="margin-bottom: 0.5rem;"><strong>Parkeerplaats:</strong> {{ . }}</li>{{ end }}
-            {{ with .Params.lift }}<li style="margin-bottom: 0.5rem;"><strong>Lift:</strong> {{ . }}</li>{{ end }}
-            {{ with .Params.verdieping }}<li style="margin-bottom: 0.5rem;"><strong>Verdieping:</strong> {{ . }}</li>{{ end }}
-            {{ with .Params.huisdieren }}<li style="margin-bottom: 0.5rem;"><strong>Huisdieren:</strong> {{ . }}</li>{{ end }}
+            {{ with .Params.epc }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>EPC:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.staat }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Staat:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.beglazing }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Beglazing:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.verwarming }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Verwarming:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.water }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Water:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.mobiscore }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Mobiscore:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.keuken }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Keuken:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.badkamer }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Badkamer:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.parkeerplaats }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Parkeerplaats:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.lift }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Lift:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.verdieping }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Verdieping:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.huisdieren }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Huisdieren:</strong>&nbsp;{{ . }}</li>{{ end }}
           </ul>
         </div>
         {{ end }}

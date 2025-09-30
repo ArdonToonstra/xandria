@@ -8,7 +8,6 @@ images:
   - /images/listings/eerste-appartement/1.jpg
   - /images/listings/eerste-appartement/0.jpg
 surface: 75
-rooms: 3
 bedrooms: 2
 garden: false
 balcony: true

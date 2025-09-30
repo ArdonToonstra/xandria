@@ -4,8 +4,8 @@ status: Beschikbaar
 property_type: Appartement
 price: 900
 address: Damhertenlaan 7, 2650 Edegem
+gemeente: Edegem
 surface: 100
-rooms: 2
 bedrooms: 2
 balcony: true
 images:
@@ -18,10 +18,6 @@ images:
   - /images/whatsapp-image-2025-09-16-at-19.09.36.jpeg
   - /images/whatsapp-image-2025-09-16-at-19.09.36-6-.jpeg
   - /images/whatsapp-image-2025-09-16-at-19.09.36-4-.jpeg
-features:
-  - "Keuken: zonder toestellen"
-  - "Gemeenschappelijk kosten: €25"
-  - "EPC: B"
 vaste_kosten: 25
 epc: B
 staat: Goede staat

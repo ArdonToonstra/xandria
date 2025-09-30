@@ -1,13 +1,17 @@
 {{/* property-card.html
-   Expects the current context `.` to be a page representing a listing
+   Expects the current context `.` to be a page repr        {{ if $page.Params.balcony }}
+        <div class="spec-item">
+          <span class="spec-icon">🪴</span>
+          <span class="spec-value">Balkon</span>
+        </div>
+        {{ end }}ng a listing
 */}}
 {{- $page := . -}}
 {{- $isUnavailable := eq $page.Params.status "Verhuurd" -}}
 {{/* expose numeric values as data attributes for client-side sorting */}}
 {{ $price := cond (isset $page.Params "price") $page.Params.price 0 }}
 {{ $surface := cond (isset $page.Params "surface") $page.Params.surface 0 }}
-{{ $rooms := cond (isset $page.Params "rooms") $page.Params.rooms 0 }}
-<div class="property-card" data-id="{{ with $page.File }}{{ .BaseFileName }}{{ else }}{{ $page.Title | urlize }}{{ end }}" data-price="{{ $price }}" data-surface="{{ $surface }}" data-rooms="{{ $rooms }}">
+<div class="property-card" data-id="{{ with $page.File }}{{ .BaseFileName }}{{ else }}{{ $page.Title | urlize }}{{ end }}" data-price="{{ $price }}" data-surface="{{ $surface }}">
   <div class="property-card-wrapper">
     <div class="property-header">
       <h3 class="property-title">{{ $page.Title }}</h3>
@@ -40,6 +44,21 @@
       {{ end }}
 
       <div class="property-specs">
+        {{ with $page.Params.property_type }}
+        <div class="spec-item">
+          <span class="spec-icon">
+            {{- if eq . "Appartement" -}}🏢
+            {{- else if eq . "Huis" -}}🏠
+            {{- else if eq . "Kantoor" -}}💼
+            {{- else if eq . "Garage" -}}🚗
+            {{- else if eq . "Overig" -}}🏘️
+            {{- else -}}🏘️
+            {{- end -}}
+          </span>
+          <span class="spec-value">{{ . }}</span>
+        </div>
+        {{ end }}
+
         {{ with $page.Params.surface }}
         <div class="spec-item">
           <span class="spec-icon">📐</span>
@@ -47,10 +66,10 @@
         </div>
         {{ end }}
 
-        {{ with $page.Params.rooms }}
+        {{ with $page.Params.gemeente }}
         <div class="spec-item">
-          <span class="spec-icon">🏠</span>
-          <span class="spec-value">{{ . }} kamers</span>
+          <span class="spec-icon">📍</span>
+          <span class="spec-value">{{ . }}</span>
         </div>
         {{ end }}
 
@@ -68,12 +87,6 @@
         </div>
         {{ end }}
 
-        {{ if $page.Params.balcony }}
-        <div class="spec-item">
-          <span class="spec-icon">🏢</span>
-          <span class="spec-value">Balkon</span>
-        </div>
-        {{ end }}
       </div>
 
       {{ if not $isUnavailable }}

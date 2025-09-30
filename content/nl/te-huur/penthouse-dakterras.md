@@ -17,20 +17,11 @@ address: Kerkstraat 1, 9000 Gent, België
 bedrooms: 2
 garden: false
 smoking_allowed: false
-rooms: 4
 images:
   - /images/listings/penthouse/1.jpg
   - /images/listings/penthouse/2.jpg
 parking: true
 lease_duration: Langetermijn
-features:
-  - Dakterras van 60m²
-  - Panoramisch uitzicht
-  - Designer interieur
-  - Wellness badkamer
-  - Airconditioning
-  - Private lift
-  - Concierge service
 pets_allowed: false
 deposit: 3700
 ---

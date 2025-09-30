@@ -712,7 +712,9 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 /* Property Details */
 .property-details {
   padding: 1.5rem;
+  padding-bottom: 4rem; /* Extra space for the absolute positioned button */
   flex-grow: 1; /* Allows this section to grow and fill available space */
+  position: relative; /* Enable absolute positioning for child elements */
 }
 
 .property-price {
@@ -745,6 +747,32 @@ h3, h4, h5, h6, body, p, .f5, .f6 {
 
 .spec-icon {
   font-size: 1rem;
+}
+
+/* Property Action Button */
+.property-action {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 2;
+}
+
+.property-action .btn-cta {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  background: var(--xandria-primary);
+  color: var(--xandria-white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.property-action .btn-cta:hover {
+  background: var(--xandria-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(24, 0, 173, 0.3);
 }
 
 /* Services Section */

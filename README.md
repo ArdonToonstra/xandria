@@ -36,7 +36,7 @@ Open `http://localhost:1313` (or the port printed by Hugo).
 ## Adding a Listing
 Create a new listing markdown file under `content/nl/te-huur/<slug>/index.md` with front matter similar to existing listings (see `content/nl/te-huur/tweede-appartement.md`). Required fields used in templates:
 - `title`, `status` (e.g., `Beschikbaar`), `price`, `images` (array)
-- Optional: `surface`, `rooms`, `bedrooms`, `garden`, `balcony`, `features[]`, `address`, etc.
+- Optional: `surface`, `bedrooms`, `garden`, `balcony`, , `address`, etc.
 
 ## Admin / CMS
 - The Decap (Netlify) admin config lives in `static/admin/config.yml`. It was updated to point to `content/te-huur`.

@@ -5,7 +5,6 @@ property_type: Appartement
 price: 950
 address: Grijpgepleim 16, 2650 Edegem
 surface: 80
-rooms: ""
 bedrooms: 2
 balcony: true
 images:
@@ -15,7 +14,7 @@ vaste_kosten: 0
 epc: C
 staat: Gerenoveerd
 beglazing: Dubbel
-verwarming: GAs
+verwarming: Gas
 water: Aparte meters
 mobiscore: 8,7
 keuken: Zonder toestellen
@@ -24,6 +23,7 @@ parkeerplaats: Apart te huur
 lift: Nee
 verdieping: Gelijksvloers
 huisdieren: Toegestaan
+gemeente: Mortsel
 ---
 Ontdek dit gerenoveerde appartement van ca. 80 m², ideaal voor wie op zoek is naar comfortabel wonen vlak bij het centrum van Edegem. Gelegen op de gelijksvloers van een kleinschalig gebouw met 5 appartementen.
 

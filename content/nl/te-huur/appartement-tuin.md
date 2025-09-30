@@ -6,14 +6,13 @@ surface: 120
 balcony: false
 bathrooms: 2
 price: 1450
-neighborhood: Borgerhout
+gemeente: Borgerhout
 date: 2025-09-10T20:00:00+02:00
 utilities_included: false
 furnished: false
 title: Ruim Appartement met Tuin
 status: Verhuurd
 address: Plantin en Moretuslei 156, 2140 Borgerhout
-rooms: 5
 bedrooms: 3
 garden: true
 smoking_allowed: false
@@ -23,14 +22,6 @@ images:
   - /images/listings/appartement-tuin/3.jpg
 parking: true
 lease_duration: Langetermijn
-features:
-  - Privé tuin van 40m²
-  - Dubbele garage
-  - Vloerverwarming
-  - Energielabel A+
-  - Domotica systeem
-  - Zonnewering
-  - Huisdieren welkom
 pets_allowed: true
 deposit: 2900
 ---

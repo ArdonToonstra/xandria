@@ -6,14 +6,13 @@ surface: 95
 balcony: true
 bathrooms: 1
 price: 1250
-neighborhood: Centrum
 date: 2025-09-10T19:24:18+02:00
 utilities_included: false
 furnished: false
 title: Modern Appartement Wijttenbachstraat
 status: Verhuurd
 address: Wijttenbachstraat 24, 2000 Antwerpen
-rooms: 4
+gemeente: centrum
 bedrooms: 2
 garden: false
 smoking_allowed: false
@@ -22,13 +21,6 @@ images:
   - /images/listings/eerste-appartement/1.jpg
 parking: true
 lease_duration: Langetermijn
-features:
-  - Centrale verwarming
-  - Volledig gerenoveerd 2023
-  - Energielabel A
-  - Parkeerplaats inbegrepen
-  - Lift aanwezig
-  - Huisdieren toegestaan
 pets_allowed: true
 deposit: 2500
 ---

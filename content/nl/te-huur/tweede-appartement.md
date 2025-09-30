@@ -6,14 +6,13 @@ surface: 55
 balcony: true
 bathrooms: 1
 price: 875
-neighborhood: Zuid
+gemeente: Zuid
 date: 2025-09-10T19:24:18+02:00
 utilities_included: true
 furnished: true
 title: Luxe Studio Engelselei
 status: Verhuurd
 address: Engelselei 4, 2000 Antwerpen
-rooms: 2
 bedrooms: 1
 garden: false
 smoking_allowed: false
@@ -22,13 +21,6 @@ images:
   - /images/listings/tweede-appartement/2.jpg
 parking: false
 lease_duration: Kort- en langetermijn mogelijk
-features:
-  - Volledig gemeubileerd
-  - Airconditioning
-  - Energielabel B
-  - High-speed internet
-  - Smart TV inbegrepen
-  - Moderne badkamer
 pets_allowed: false
 deposit: 1750
 ---

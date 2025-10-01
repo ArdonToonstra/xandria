@@ -12,17 +12,17 @@ images:
   - /images/whatsapp-image-2025-09-23-at-13.14.33-1-.jpeg
 vaste_kosten: 0
 epc: C
-staat: Gerenoveerd
-beglazing: Dubbel
-verwarming: Gas
-water: Aparte meters
+staat: gerenoveerd
+beglazing: dubbel
+verwarming: gas
+water: aparte meters
 mobiscore: 8,7
-keuken: Zonder toestellen
-badkamer: Douche
-parkeerplaats: Apart te huur
-lift: Nee
-verdieping: Gelijksvloers
-huisdieren: Toegestaan
+keuken: zonder toestellen
+badkamer: douche
+parkeerplaats: apart te huur
+lift: nee
+verdieping: gelijksvloers
+huisdieren: toegestaan
 gemeente: Mortsel
 ---
 Ontdek dit gerenoveerde appartement van ca. 80 m², ideaal voor wie op zoek is naar comfortabel wonen vlak bij het centrum van Edegem. Gelegen op de gelijksvloers van een kleinschalig gebouw met 5 appartementen.

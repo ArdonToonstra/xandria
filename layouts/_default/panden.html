@@ -1,3 +1,11 @@
+{{ define "title" }}
+  {{ .Params.meta_title | default .Title }}
+{{ end }}
+
+{{ define "meta" }}
+  <meta name="description" content="{{ .Params.meta_description }}">
+{{ end }}
+
 {{ define "body_classes" }}no-main-bottom-padding{{ end }}
 
 {{ define "main" }}

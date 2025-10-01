@@ -2,6 +2,8 @@
 date: 2025-09-16T10:05:00+02:00
 draft: false
 title: Panden gezocht in Antwerpen en omgeving
+meta_title: "Panden gezocht Antwerpen | Xandria koopt appartementen & gebouwen"
+meta_description: "Xandria zoekt panden in Antwerpen: kleine appartementsgebouwen, bouwgrond en renovatieprojecten. Betrouwbaar familiebedrijf, transparant en correct."
 layout: panden
 intro_text: "Xandria is steeds op zoek naar nieuwe panden om ons vastgoedportfolio verder uit te breiden. Als familiebedrijf investeren wij in kwalitatieve appartementen en gebouwen in en rond Antwerpen. Wij staan open voor samenwerking met eigenaars die hun pand willen verkopen en hechten daarbij veel waarde aan transparantie en een correcte afhandeling."
 looking_for_title: "Welke panden zoeken wij?"

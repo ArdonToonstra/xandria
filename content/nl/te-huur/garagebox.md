@@ -36,4 +36,4 @@ De garagebox is geschikt voor:
 * Gemakkelijk bereikbaar, zowel met de wagen als met de fiets
 * 24/7 toegang
 
-Heb je interesse of wil je een kijkje komen nemen? Neem gerust contact op via [het contactformulier](https://xandria-bv.web.app/contact/).
+Heb je interesse of wil je een kijkje komen nemen? Neem gerust contact op.

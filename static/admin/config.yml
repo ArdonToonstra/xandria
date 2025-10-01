@@ -54,6 +54,8 @@ collections:
         fields:
           - { label: "Titel", name: "title", widget: "string", i18n: false }
           - { label: "Publicatiedatum", name: "date", widget: "datetime", i18n: "duplicate" }
+          - { label: "Meta Titel", name: "meta_title", widget: "string", i18n: false }
+          - { label: "Meta Beschrijving", name: "meta_description", widget: "text", i18n: false }
           - { label: "Inhoud", name: "body", widget: "markdown", i18n: false }
 
   # Collectie voor het verhuuraanbod

@@ -20,17 +20,17 @@ images:
   - /images/whatsapp-image-2025-09-16-at-19.09.36-4-.jpeg
 vaste_kosten: 25
 epc: B
-staat: Goede staat
-beglazing: Dubbele beglazing
-verwarming: Verwarming op gas
-water: Gemeenschappelijke meter
+staat: goede staat
+beglazing: dubbele beglazing
+verwarming: verwarming op gas
+water: gemeenschappelijke meter
 mobiscore: 9,1/10
-keuken: Keuken met basisvoorzieningen
-badkamer: Badkamer met bad
-parkeerplaats: Geen parkeerplaats
-lift: Nee
+keuken: basisvoorzieningen
+badkamer: met bad
+parkeerplaats: geen
+lift: nee
 verdieping: 2e verdieping
-huisdieren: Toegestaan
+huisdieren: toegestaan
 ---
 Ontdek dit ruime en lichtrijke appartement van ca. 100 m², ideaal voor wie op zoek is naar comfortabel wonen met buitenruimte aan beide zijden van het gebouw. Gelegen op de **2e verdieping** van een kleinschalig gebouw, biedt dit appartement een **functionele indeling met** veel natuurlijk licht. 
 
@@ -60,4 +60,4 @@ Per direct beschikbaar.
 
 ## Interesse? 
 
-Heb je interesse of wil je een kijkje komen nemen? Neem gerust contact op via [het contactformulier](https://xandria-bv.web.app/contact/).
+Heb je interesse of wil je een kijkje komen nemen? Neem gerust contact op.

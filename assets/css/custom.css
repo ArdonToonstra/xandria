@@ -93,6 +93,15 @@ h1, .f2, .f-subheadline-l {
   color: rgba(153, 197, 255, 1) !important;
 }
 
+.company-details p {
+  margin: 0 0 0.3rem 0 !important;
+  font-size: 0.9rem !important;
+}
+
+.company-details p:first-child {
+  margin-bottom: 0.8rem !important;
+}
+
 .footer-nav {
   list-style: none !important;
   padding: 0 !important;

@@ -1207,7 +1207,6 @@ body.no-main-bottom-padding .over-ons-page .cta-section:last-child {
 /* Panden Page Styles */
 .panden-page .property-type-item {
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .panden-page .property-type-item:hover {
@@ -1218,7 +1217,6 @@ body.no-main-bottom-padding .over-ons-page .cta-section:last-child {
 
 .panden-page .criteria-item {
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .panden-page .criteria-item:hover {

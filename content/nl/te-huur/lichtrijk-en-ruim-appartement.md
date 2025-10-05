@@ -1,6 +1,6 @@
 ---
 title: Lichtrijk en ruim appartement in Mortsel
-status: Beschikbaar
+status: Verhuurd
 property_type: Appartement
 price: 900
 address: Damhertenlaan 7, 2650 Edegem

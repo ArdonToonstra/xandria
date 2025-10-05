@@ -6,7 +6,7 @@ price: 950
 address: Grijpgepleim 16, 2650 Edegem
 surface: 80
 bedrooms: 2
-gemeente: Mortsel
+gemeente: Edegem
 balcony: true
 images:
   - /images/whatsapp-image-2025-09-23-at-13.14.33-2-.jpeg

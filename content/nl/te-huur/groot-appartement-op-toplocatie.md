@@ -1,6 +1,6 @@
 ---
 title: "Groot appartement op toplocatie! "
-status: Beschikbaar
+status: Verhuurd
 property_type: Appartement
 price: 900
 address: August Petelei 62

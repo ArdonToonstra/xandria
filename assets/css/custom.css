@@ -1529,6 +1529,212 @@ body.no-main-bottom-padding .over-ons-page .cta-section:last-child {
   }
 }
 
+/* Te Huur Single Page Styling */
+.listing-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.listing-detail h1 {
+  font-family: 'Bree Serif', serif;
+  color: var(--xandria-primary, #1800ad);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.listing-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Desktop grid layout */
+.property-image-container {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.listing-sidebar {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  position: sticky;
+  top: 2rem;
+}
+
+.content {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 2rem;
+}
+
+.property-image-container img {
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.content h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #1800ad;
+  
+  
+  padding-bottom: 0.5rem;
+}
+
+/* Remove border from other h2/h3 elements in sidebar */
+.details h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #1800ad;
+  margin-bottom: 1rem;
+  border-bottom: none !important;
+}
+
+.content div {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.sidebar-section {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.sidebar-section .status-info {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-section .price-info {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1800ad;
+  margin: 0;
+}
+
+.sidebar-section .additional-costs {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.sidebar-section .availability-date {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.property-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--xandria-gray-light, #f8f9fa);
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.spec-item-icon {
+  font-size: 1rem;
+}
+
+.details h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #1800ad;
+  margin-bottom: 1rem;
+}
+
+.details ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.details li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.details li span {
+  color: #1800ad;
+  margin-right: 0.5rem;
+}
+
+.contact-cta {
+  text-align: center;
+}
+
+.contact-cta .btn-cta {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.map-container {
+  margin-top: 2rem;
+}
+
+.map-container iframe {
+  border: 0;
+  border-radius: 12px;
+}
+
+.back-to-overview {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* Mobile layout for te-huur single page */
+@media (max-width: 768px) {
+  .listing-detail {
+    padding: 1rem;
+  }
+
+  .listing-detail h1 {
+    font-size: 2rem;
+  }
+
+  .listing-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Perfect mobile order: images, sidebar, content */
+  .property-image-container {
+    order: 1; /* Images first */
+  }
+
+  .listing-sidebar {
+    order: 2; /* Sidebar second */
+    position: static;
+  }
+
+  .content {
+    order: 3; /* Content last */
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .listing-detail h1 {
+    font-size: 1.75rem;
+  }
+}
+
 .filter-btn:hover {
   background-color: #e0e0e0;
 }

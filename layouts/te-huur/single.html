@@ -1,91 +1,51 @@
 {{ define "main" }}
-  <style>
-    /* Responsive layout - only change order on mobile, keep desktop layout intact */
-    @media (max-width: 768px) {
-      .listing-layout {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1.5rem !important;
-      }
-      
-      .listing-main {
-        order: 1; /* Show main content (images/description) first on mobile */
-      }
-      
-      .listing-sidebar {
-        order: 2; /* Show sidebar (price/specs) second on mobile */
-        position: static !important; /* Remove sticky on mobile */
-      }
-      
-      .listing-detail {
-        padding: 1rem !important;
-      }
-      
-      .listing-detail h1 {
-        font-size: 2rem !important;
-      }
-    }
+  <article class="listing-detail">
+    <h1>{{ .Title }}</h1>
     
-    @media (max-width: 480px) {
-      .listing-detail h1 {
-        font-size: 1.75rem !important;
-      }
-    }
-  </style>
-  <article class="listing-detail" style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-    <h1 style="font-family: 'Bree Serif', serif; color: var(--xandria-primary, #1800ad); font-size: 2.5rem; margin-bottom: 1rem;">{{ .Title }}</h1>
-    
-    <div class="listing-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
+    <div class="listing-layout">
       
-      <div class="listing-main">
-        {{ if .Params.images }}
-        <div class="property-image-container">
-          <div class="property-carousel">
-            {{ range .Params.images }}
-              <div class="carousel-cell">
-                <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" style="border-radius: 8px; cursor: pointer;" />
-              </div>
-            {{ end }}
-          </div>
-          <div class="carousel-nav">
-            <button class="carousel-prev" aria-label="Vorige">‹</button>
-            <button class="carousel-next" aria-label="Volgende">›</button>
-          </div>
+      <!-- Images section -->
+      {{ if .Params.images }}
+      <div class="property-image-container">
+        <div class="property-carousel">
+          {{ range .Params.images }}
+            <div class="carousel-cell">
+              <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" />
+            </div>
+          {{ end }}
         </div>
-        {{ end }}
-
-        <div class="content" style="margin-top: 2rem;">
-          <h2 style="font-family: 'Montserrat', sans-serif; color: #1800ad; border-bottom: 2px solid #99c5ff; padding-bottom: 0.5rem;">Beschrijving</h2>
-          <div style="font-family: 'Open Sans', sans-serif; line-height: 1.6; font-size: 1.1rem;">
-            {{ .Content }}
-          </div>
+        <div class="carousel-nav">
+          <button class="carousel-prev" aria-label="Vorige">‹</button>
+          <button class="carousel-next" aria-label="Volgende">›</button>
         </div>
       </div>
+      {{ end }}
 
-      <aside class="listing-sidebar" style="position: sticky; top: 2rem;">
-        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
-          <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+      <!-- Sidebar with specs and pricing -->
+      <aside class="listing-sidebar">
+        <div class="sidebar-section">
+          <p class="status-info">
             <span class="status-badge status-{{ .Params.status | lower | replaceRE " " "-" }}">{{ .Params.status }}</span>
           </p>
-          <p style="font-size: 1.25rem; font-weight: 600; color: #1800ad; margin: 0;">
+          <p class="price-info">
             <strong>Prijs:</strong> €{{ .Params.price }}/maand
           </p>
           {{ with .Params.vaste_kosten }}
-          <p style="font-size: 1rem; margin-top: 0.5rem;">
+          <p class="additional-costs">
             <strong>Vaste kosten:</strong> €{{ . }}/maand
           </p>
           {{ end }}
           {{ with .Params.beschikbaar_vanaf }}
-          <p style="font-size: 1rem; margin-top: 0.5rem;">
+          <p class="availability-date">
             <strong>Beschikbaar vanaf:</strong> {{ . | time.Format ":date_long" }}
           </p>
           {{ end }}
           
           <!-- Property specs with icons -->
-          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e9ecef;">
+          <div class="property-specs">
             {{ with .Params.property_type }}
-            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
-              <span style="font-size: 1rem;">
+            <div class="spec-item">
+              <span class="spec-item-icon">
                 {{- if eq . "Appartement" -}}🏢
                 {{- else if eq . "Huis" -}}🏠
                 {{- else if eq . "Kantoor" -}}💼
@@ -98,33 +58,33 @@
             </div>
             {{ end }}
             {{ with .Params.gemeente }}
-            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
-              <span style="font-size: 1rem;">📍</span>
+            <div class="spec-item">
+              <span class="spec-item-icon">📍</span>
               <span>{{ . }}</span>
             </div>
             {{ end }}
             {{ with .Params.surface }}
-            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
-              <span style="font-size: 1rem;">📐</span>
+            <div class="spec-item">
+              <span class="spec-item-icon">📐</span>
               <span>{{ . }}m²</span>
             </div>
             {{ end }}
             
             {{ with .Params.bedrooms }}
-            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
-              <span style="font-size: 1rem;">🛏️</span>
+            <div class="spec-item">
+              <span class="spec-item-icon">🛏️</span>
               <span>{{ . }} slaapkamers</span>
             </div>
             {{ end }}
             {{ if .Params.garden }}
-            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
-              <span style="font-size: 1rem;">🌿</span>
+            <div class="spec-item">
+              <span class="spec-item-icon">🌿</span>
               <span>Tuin</span>
             </div>
             {{ end }}
             {{ if .Params.balcony }}
-            <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--xandria-gray-light, #f8f9fa); padding: 0.5rem 0.75rem; border-radius: 20px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; font-weight: 500;">
-              <span style="font-size: 1rem;">🪴</span>
+            <div class="spec-item">
+              <span class="spec-item-icon">🪴</span>
               <span>Balkon</span>
             </div>
             {{ end }}
@@ -132,45 +92,54 @@
         </div>
 
         {{ if or .Params.epc .Params.staat .Params.beglazing .Params.verwarming .Params.water .Params.mobiscore .Params.keuken .Params.badkamer .Params.parkeerplaats .Params.lift .Params.verdieping .Params.huisdieren }}
-        <div class="details" style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
-          <h3 style="font-family: 'Montserrat', sans-serif; color: #1800ad; margin-bottom: 1rem;">Kenmerken</h3>
-          <ul style="list-style: none; padding-left: 0;">
-            {{ with .Params.epc }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>EPC:</strong>&nbsp;{{ . }}</li>{{ end }}
-            {{ with .Params.staat }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Staat:</strong>&nbsp;{{ . }}</li>{{ end }}
-            {{ with .Params.beglazing }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Beglazing:</strong>&nbsp;{{ . }}</li>{{ end }}
-            {{ with .Params.verwarming }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Verwarming:</strong>&nbsp;{{ . }}</li>{{ end }}
-            {{ with .Params.water }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Water:</strong>&nbsp;{{ . }}</li>{{ end }}
-            {{ with .Params.mobiscore }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Mobiscore:</strong>&nbsp;{{ . }}</li>{{ end }}
-            {{ with .Params.keuken }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Keuken:</strong>&nbsp;{{ . }}</li>{{ end }}
-            {{ with .Params.badkamer }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Badkamer:</strong>&nbsp;{{ . }}</li>{{ end }}
-            {{ with .Params.parkeerplaats }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Parkeerplaats:</strong>&nbsp;{{ . }}</li>{{ end }}
-            {{ with .Params.lift }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Lift:</strong>&nbsp;{{ . }}</li>{{ end }}
-            {{ with .Params.verdieping }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Verdieping:</strong>&nbsp;{{ . }}</li>{{ end }}
-            {{ with .Params.huisdieren }}<li style="margin-bottom: 0.5rem; display: flex; align-items: center;"><span style="color: #1800ad; margin-right: 0.5rem;">✓</span><strong>Huisdieren:</strong>&nbsp;{{ . }}</li>{{ end }}
+        <div class="details sidebar-section">
+          <h3>Kenmerken</h3>
+          <ul>
+            {{ with .Params.epc }}<li><span>✓</span><strong>EPC:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.staat }}<li><span>✓</span><strong>Staat:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.beglazing }}<li><span>✓</span><strong>Beglazing:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.verwarming }}<li><span>✓</span><strong>Verwarming:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.water }}<li><span>✓</span><strong>Water:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.mobiscore }}<li><span>✓</span><strong>Mobiscore:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.keuken }}<li><span>✓</span><strong>Keuken:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.badkamer }}<li><span>✓</span><strong>Badkamer:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.parkeerplaats }}<li><span>✓</span><strong>Parkeerplaats:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.lift }}<li><span>✓</span><strong>Lift:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.verdieping }}<li><span>✓</span><strong>Verdieping:</strong>&nbsp;{{ . }}</li>{{ end }}
+            {{ with .Params.huisdieren }}<li><span>✓</span><strong>Huisdieren:</strong>&nbsp;{{ . }}</li>{{ end }}
           </ul>
         </div>
         {{ end }}
 
-        <div style="text-align: center;">
-          <a href="{{ "/contact" | relURL }}" class="btn-cta" style="display: block; width: 100%; margin-bottom: 1rem;">Contact Opnemen</a>
-        </div>
-
         {{ if .Params.address }}
-        <div class="map-container" style="margin-top: 2rem;">
+        <div class="map-container">
           <iframe
             width="100%"
             height="250"
-            style="border:0; border-radius: 12px;"
             loading="lazy"
             allowfullscreen
             src="https://www.google.com/maps/embed/v1/place?key={{ site.Params.googleMapsApiKey }}&q={{ .Params.address | urlquery }}">
           </iframe>
         </div>
         {{ end }}
+
+        <div class="contact-cta">
+          <a href="{{ "/contact" | relURL }}" class="btn-cta">Contact Opnemen</a>
+        </div>
+
       </aside>
+
+      <!-- Content section -->
+      <div class="content">
+        <h2 style="border-bottom: 2px solid #99c5ff;">Beschrijving</h2>
+        
+        <div>
+          {{ .Content }}
+        </div>
+      </div>
     </div>
 
-    <div style="text-align: center; margin-top: 3rem;">
+    <div class="back-to-overview">
       <a href="{{ "/te-huur" | relURL }}" class="btn-secondary">Terug naar Overzicht</a>
     </div>
 

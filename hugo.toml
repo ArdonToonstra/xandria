@@ -7,7 +7,7 @@ defaultContentLanguage = 'nl'
 [params]
   site_logo = "/images/logo.svg"
   # Set this to your deployed Apps Script web app URL (or override per-shortcode)
-  contactScriptURL = "https://script.google.com/macros/s/AKfycbw_YZFncG9G4tmUNkW_xlorfNn8lbaVjst7dFfgpVw6hw30j_7hRvcbCeJIOxH7OMFO/exec"
+  contactScriptURL = "https://script.google.com/macros/s/AKfycbzVSNdjxX8CCUWso6ucyKHNas3Ws9j2gu4WBN9Rjh9pyHxQqdIUSySLmeNMhqlnBl4I/exec"
   # The secret is now read from the CONTACT_FORM_SECRET environment variable during build.
   googleMapsApiKey = ""
 

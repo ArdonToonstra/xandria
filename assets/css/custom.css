@@ -1291,6 +1291,13 @@ body.no-main-bottom-padding .over-ons-page .cta-section:last-child {
   color: #856404;
 }
 
+/* Homepage Content Container */
+.homepage-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 /* Page Title */
 .page-title {
   font-family: 'Bree Serif', serif;
@@ -1366,6 +1373,54 @@ body.no-main-bottom-padding .over-ons-page .cta-section:last-child {
   
   .property-specs {
     justify-content: center;
+  }
+
+  /* Property card mobile fixes */
+  .property-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .property-card-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Ensure proper mobile order: header, image, details */
+  .property-header {
+    order: 1;
+    padding: 1rem 1rem 0.5rem;
+  }
+
+  .property-image-container {
+    order: 2;
+    height: 200px; /* Smaller height on mobile */
+  }
+
+  .property-details {
+    order: 3;
+    padding: 1rem;
+    padding-bottom: 3rem; /* Less space for button on mobile */
+  }
+
+  .property-price {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .property-action {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  /* Homepage content mobile */
+  .homepage-content {
+    padding: 0 1rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -1578,8 +1633,6 @@ body.no-main-bottom-padding .over-ons-page .cta-section:last-child {
 .content h2 {
   font-family: 'Montserrat', sans-serif;
   color: #1800ad;
-  
-  
   padding-bottom: 0.5rem;
 }
 

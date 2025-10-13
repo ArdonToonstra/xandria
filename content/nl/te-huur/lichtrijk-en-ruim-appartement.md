@@ -9,7 +9,7 @@ bedrooms: 2
 gemeente: Edegem
 balcony: true
 images:
-  - /images/whatsapp-image-2025-10-01-at-16.31.29.jpeg
+  - /images/whatsapp-image-2025-10-13-at-12.17.01.jpeg
   - /images/whatsapp-image-2025-09-16-at-19.09.36-2-.jpeg
   - /images/whatsapp-image-2025-09-16-at-19.09.36-3-.jpeg
   - /images/whatsapp-image-2025-09-16-at-19.09.36-5-.jpeg

@@ -91,7 +91,7 @@
       <span class="hamburger" aria-hidden="true"></span>
     </button>
 
-    <div class="site-nav__menu dn db-l">
+    <div class="site-nav__menu" id="mobile-menu">
       <ul class="pl0 mr3 site-menu" role="menu">
         <li class="list f5 f4-ns fw4 dib-l db pv2" role="none"><a role="menuitem" class="no-underline" href="{{ "/over-ons" | relURL }}">Over ons</a></li>
         <li class="list f5 f4-ns fw4 dib-l db pv2" role="none"><a role="menuitem" class="no-underline" href="{{ "/te-huur" | relURL }}">Te huur</a></li>
@@ -120,7 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Toggle mobile menu
-  toggle.addEventListener('click', function() {
+  toggle.addEventListener('click', function(e) {
+    e.preventDefault();
     var expanded = this.getAttribute('aria-expanded') === 'true';
     this.setAttribute('aria-expanded', (!expanded).toString());
     menu.classList.toggle(openClass);

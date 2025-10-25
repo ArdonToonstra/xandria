@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
   toggle.addEventListener('click', function() {
     var expanded = this.getAttribute('aria-expanded') === 'true';
     this.setAttribute('aria-expanded', (!expanded).toString());
-    nav.classList.toggle(openClass);
+    menu.classList.toggle(openClass);
   });
 
   window.addEventListener('scroll', onScroll, { passive: true });

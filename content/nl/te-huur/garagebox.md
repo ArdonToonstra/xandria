@@ -1,11 +1,11 @@
 ---
 title: Veilige private garagebox in Edegem
-status: Beschikbaar
+status: Verhuurd
 property_type: Garage
 price: 130
 address: Grijpegemplein 16, 2650 Edegem
-gemeente: Edegem
 surface: 20
+gemeente: Edegem
 images:
   - /images/whatsapp-image-2025-09-16-at-19.09.57.jpeg
   - /images/whatsapp-image-2025-09-16-at-19.09.57-2-.jpeg

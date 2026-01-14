@@ -1063,6 +1063,18 @@ body.no-main-bottom-padding main {
   box-shadow: 0 8px 24px rgba(24, 0, 173, 0.1);
 }
 
+/* Honeypot field - hidden from humans, visible to bots
+   Uses position absolute to avoid layout shift, opacity 0 for invisibility,
+   and pointer-events none to prevent accidental interaction */
+.contact-form .hp-field {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 .contact-form .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;

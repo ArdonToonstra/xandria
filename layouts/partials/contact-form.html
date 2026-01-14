@@ -19,6 +19,14 @@
   <!-- contact form not configured: render nothing -->
 {{ else }}
   <form id="contact-form" class="contact-form" data-script-url="{{ $script }}">
+    {{/* Honeypot field - hidden from humans, bots will fill it */}}
+    <div class="form-group hp-field" aria-hidden="true">
+      <input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
+      <label for="website">Website</label>
+    </div>
+    {{/* Timestamp for timing-based spam detection */}}
+    <input type="hidden" name="_timestamp" id="form-timestamp" value="">
+
     <div class="form-row">
       <div class="form-group">
         <input type="text" id="voornaam" name="voornaam" placeholder=" " required>

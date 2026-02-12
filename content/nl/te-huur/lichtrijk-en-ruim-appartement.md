@@ -1,5 +1,5 @@
 ---
-title: Lichtrijk en ruim appartement in Mortsel
+title: Lichtrijk en ruim appartement
 status: Verhuurd
 property_type: Appartement
 price: 900

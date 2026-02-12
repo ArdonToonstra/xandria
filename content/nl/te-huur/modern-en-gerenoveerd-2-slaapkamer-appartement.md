@@ -13,7 +13,6 @@ images:
   - /images/whatsapp-image-2025-09-23-at-13.14.33-2-.jpeg
   - /images/whatsapp-image-2025-11-16-at-15.50.35.jpeg
   - /images/whatsapp-image-2025-09-23-at-13.14.33-1-.jpeg
-  - /images/whatsapp-image-2026-02-11-at-16.45.00.jpeg
 vaste_kosten: 0
 epc: C
 staat: gerenoveerd

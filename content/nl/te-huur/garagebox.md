@@ -1,5 +1,5 @@
 ---
-title: Veilige private garagebox in Edegem
+title: 5 veilige private garageboxen in Edegem
 status: Verhuurd
 property_type: Garage
 price: 130

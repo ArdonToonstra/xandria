@@ -1,5 +1,5 @@
 ---
-title: Modern en gerenoveerd appartement
+title: 5 moderne en gerenoveerde appartementen
 status: Verhuurd
 property_type: Appartement
 price: 950

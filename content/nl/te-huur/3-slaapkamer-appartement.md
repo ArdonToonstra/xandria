@@ -1,5 +1,5 @@
 ---
-title: "5 grote 3 slaapkamer appartementen "
+title: 5 grote 3 slaapkamer appartementen in Buizegem
 status: Verhuurd
 property_type: Appartement
 price: ""

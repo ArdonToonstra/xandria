@@ -1,5 +1,5 @@
 ---
-title: "3 slaapkamer appartement "
+title: "5 grote 3 slaapkamer appartementen "
 status: Verhuurd
 property_type: Appartement
 price: ""

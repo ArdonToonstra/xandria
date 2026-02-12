@@ -1,5 +1,5 @@
 ---
-title: "5 grote appartementen op toplocatie! "
+title: "5 mooie appartementen op toplocatie! "
 status: Verhuurd
 property_type: Appartement
 price: 900

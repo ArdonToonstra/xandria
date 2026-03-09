@@ -1,5 +1,5 @@
 ---
-title: Lichtrijk appartement & duplex te Mortsel
+title: Lichtrijk appartement & grote duplex te Mortsel
 status: Verhuurd
 property_type: Appartement
 price: 900

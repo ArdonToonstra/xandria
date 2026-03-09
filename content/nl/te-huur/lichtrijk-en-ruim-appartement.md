@@ -1,5 +1,5 @@
 ---
-title: Lichtrijk en ruim appartement te Mortsel
+title: Lichtrijk appartement & duplex te Mortsel
 status: Verhuurd
 property_type: Appartement
 price: 900
@@ -9,6 +9,7 @@ bedrooms: 2
 gemeente: Edegem
 balcony: true
 images:
+  - /images/whatsapp-image-2026-03-07-at-11.51.12.jpeg
   - /images/whatsapp-image-2025-10-13-at-12.17.01.jpeg
   - /images/whatsapp-image-2025-09-16-at-19.09.36-2-.jpeg
   - /images/whatsapp-image-2025-09-16-at-19.09.36-3-.jpeg
